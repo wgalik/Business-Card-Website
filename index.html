@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/e85828e76a.js"
+      crossorigin="anonymous"></script>
+    <style>
+      *,
+      ::before,
+      ::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --info: #0dcaf0;
+        --shadowColor: #0dcaf075;
+        --shadow: 5px 5px 15px var(--shadowColor),
+          -5px -5px 15px var(--shadowColor), 5px -5px 15px var(--shadowColor),
+          -5px 5px 15px var(--shadowColor);
+        --bs-navbar-active-color: var(--info);
+      }
+      body,
+      nav {
+        background-color: #121828;
+      }
+      #code {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: calc(50% - 50vh);
+        left: calc(50% - 50vw);
+        color: transparent;
+        font-size: 20em;
+        animation: light 3s linear 1s 1;
+      }
+      #code::after {
+        content: "</>";
+      }
+      #logo::after {
+        color: var(--info);
+        text-shadow: var(--shadow);
+        content: "</>";
+        animation: light 3s linear 1s infinite;
+      }
+
+      @keyframes light {
+        0% {
+          text-shadow: none;
+        }
+        1% {
+          color: var(--info);
+          text-shadow: var(--shadow);
+        }
+        2% {
+          color: transparent;
+          text-shadow: none;
+        }
+        3% {
+          color: var(--info);
+          text-shadow: var(--shadow);
+        }
+        31% {
+          color: var(--info);
+          text-shadow: var(--shadow);
+        }
+        32% {
+          color: transparent;
+          text-shadow: none;
+        }
+        33% {
+          color: var(--info);
+          text-shadow: var(--shadow);
+        }
+        64% {
+          color: var(--info);
+          text-shadow: 5px 5px 15px #54b3d353, -5px -5px 15px#54b3d353,
+            5px -5px 15px #54b3d353, -5px 5px 15px#54b3d353;
+        }
+        95% {
+          color: var(--info);
+          text-shadow: var(--shadow);
+        }
+        96% {
+          color: transparent;
+          text-shadow: none;
+        }
+        97% {
+          color: var(--info);
+          text-shadow: var(--shadow);
+        }
+        99% {
+          color: var(--info);
+          text-shadow: var(--shadow);
+        }
+        100% {
+          color: transparent;
+          text-shadow: none;
+        }
+      }
+
+      #about,
+      #techs,
+      #projects,
+      #contact {
+        margin-top: 10%;
+      }
+
+      .star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: var(--shadowColor);
+        border-radius: 50%;
+        animation: twinkle 3s infinite ease-in-out;
+      }
+
+      @keyframes twinkle2 {
+        0%,
+        100% {
+          text-shadow: var(--shadow);
+        }
+        50% {
+          text-shadow: 5px 5px 15px #54b3d353, -5px -5px 15px#54b3d353,
+            5px -5px 15px #54b3d353, -5px 5px 15px#54b3d353;
+        }
+      }
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.2;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.5);
+        }
+      }
+
+      .nav-link {
+        color: #fbfbfb;
+      }
+      .nav-link:hover {
+        color: var(--info);
+      }
+      .nav-link[aria-expanded="true"] {
+        color: var(--info);
+        text-shadow: var(--shadow);
+        font-weight: 600;
+        animation: twinkle2 3s infinite linear;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- place navbar here -->
+      <div
+        id="code"
+        class="font-monospace fw-bold d-flex justify-content-center align-items-center"></div>
+      <!-- navbar -->
+      <nav
+        class="navbar navbar-expand-sm navbar-dark shadow position-fixed z-3 w-100 top-0 start-0 d-none">
+        <div class="container-fluid align-items-baseline">
+          <!-- <a class="navbar-brand" href="#"            > -->
+          <p class="font-monospace ms-2 fw-bold fs-3" id="logo"></p>
+          <!-- </a> -->
+          <button
+            class="navbar-toggler navbar-dark"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon navbar-dark"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  data-bs-toggle="collapse"
+                  href="#about"
+                  data-bs-target="#about"
+                  >About me</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  data-bs-toggle="collapse"
+                  href="#techs"
+                  data-bs-target="#techs"
+                  >Technologies</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  data-bs-toggle="collapse"
+                  href="#projects"
+                  data-bs-target="#projects"
+                  href="#"
+                  >Projects</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a
+                  id="cien"
+                  class="nav-link"
+                  data-bs-toggle="collapse"
+                  href="#contact"
+                  data-bs-target="#contact"
+                  href="#"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!--  -->
+
+      <div class="collapse z-1 text-light" id="about">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-3 mt-5 mb-5 mt-md-0">
+              <img
+                class="rounded-circle border border-light p-2"
+                src="/portret_.jpg"
+                alt="Bootstrap"
+                width="100%"
+                alt="" />
+            </div>
+            <div class="col-12 col-md-9 border-start">
+              <h1 class="ps-md-2">About me</h1>
+              <p class="ps-md-2">
+                Hi! My name is Wojtek and I’m a freelancer specializing in
+                creating websites.
+              </p>
+
+              <p class="ps-md-2">
+                I’ve always been fascinated by technology and its impact on our
+                daily lives, which is why I decided to pursue a career in
+                building modern and functional websites. I treat every project
+                as a challenge and an opportunity to learn - and quickly picking
+                up new skills is one of my strongest traits.
+              </p>
+              <p class="ps-md-2">
+                I’m not afraid of new technologies, and difficulties motivate me
+                to take action. I consistently strive to achieve my goals while
+                paying attention to aesthetics, usability, and detail. I believe
+                in continuous development, so I’m constantly expanding my
+                knowledge in front-end development, WordPress, and PHP. This
+                allows me to better respond to my clients’ needs and create
+                projects that not only look good but also perform well - fast,
+                smoothly, and reliably.
+              </p>
+              <p class="ps-md-2">
+                In my work, I value communication, reliability, and meeting
+                deadlines. I enjoy challenges and gladly take on new projects
+                that let me use both creativity and logical thinking.
+              </p>
+              <p class="ps-md-2">
+                If you’re looking for someone who can not only build a website
+                but also help turn your idea into a real, well-functioning
+                product - I’d love to work with you!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container collapse z-1 text-light" id="techs">
+        <h1 class="mb-5">Technologies</h1>
+        <div class="row">
+          <div class="col-sm-3 font-monospace mb-sm-4">HTML</div>
+
+          <div class="progress p-0 col-sm-9 mb-4 mb-sm-4">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+              style="width: 95%"></div>
+          </div>
+          <div class="col-sm-3 font-monospace mb-sm-4">CSS</div>
+
+          <div class="progress p-0 col-sm-9 mb-4 mb-sm-4">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+              style="width: 90%"></div>
+          </div>
+          <div class="col-sm-3 font-monospace mb-sm-4">Bootstrap</div>
+
+          <div class="progress p-0 col-sm-9 mb-4 mb-sm-4">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+              style="width: 75%"></div>
+          </div>
+          <div class="col-sm-3 font-monospace mb-sm-4">Sass</div>
+
+          <div class="progress p-0 col-sm-9 mb-4 mb-sm-4">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+              style="width: 80%"></div>
+          </div>
+          <div class="col-sm-3 font-monospace mb-sm-4">JavaScript</div>
+
+          <div class="progress p-0 col-sm-9 mb-4 mb-sm-4">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+              style="width: 75%"></div>
+          </div>
+
+          <div class="col-sm-3 font-monospace mb-sm-4">jQuery</div>
+
+          <div class="progress p-0 col-sm-9 mb-4 mb-sm-4">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+              style="width: 85%"></div>
+          </div>
+          <div class="col-sm-3 font-monospace mb-sm-4">React</div>
+
+          <div class="progress p-0 col-sm-9 mb-4 mb-sm-4">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+              style="width: 35%"></div>
+          </div>
+          <div class="col-sm-3 font-monospace mb-sm-4">Vue.js</div>
+
+          <div class="progress p-0 col-sm-9 mb-4 mb-sm-4">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+              style="width: 10%"></div>
+          </div>
+          <div class="col-sm-3 font-monospace mb-sm-4">TypeScript</div>
+
+          <div class="progress p-0 col-sm-9 mb-4 mb-sm-4">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+              style="width: 15%"></div>
+          </div>
+          <div class="col-sm-3 font-monospace mb-sm-4">PHP</div>
+
+          <div class="progress p-0 col-sm-9 mb-4 mb-sm-4">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+              style="width: 50%"></div>
+          </div>
+          <div class="col-sm-3 font-monospace mb-sm-4">WordPress</div>
+
+          <div class="progress p-0 col-sm-9 mb-4 mb-sm-4">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+              style="width: 65%"></div>
+          </div>
+          <div class="col-sm-3 font-monospace mb-sm-4">Git</div>
+
+          <div class="progress p-0 col-sm-9 mb-4 mb-sm-4">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+              style="width: 55%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="collapse z-1 text-light" id="projects">
+        <div class="container">
+          <div class="row">
+            <div class="col-3">
+              <img
+                class="rounded-circle border border-primary"
+                src="/portret_.jpg"
+                alt="Bootstrap"
+                width="100%"
+                alt="" />
+            </div>
+            <div class="col-9">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
+              distinctio voluptas quod adipisci accusantium possimus totam rem
+              sunt. Itaque dolorem aperiam voluptatibus, facere exercitationem
+              culpa quos hic voluptate quisquam quam laboriosam, officiis
+              eveniet quaerat incidunt modi pariatur, laudantium distinctio. Sed
+              fugit ad voluptatum asperiores repudiandae at atque aut ipsam
+              accusamus in quibusdam ea temporibus, provident, enim doloremque
+              accusantium laborum veniam. Debitis aperiam cumque fugiat natus
+              numquam esse culpa! Fugiat nemo error, ad molestias doloribus quo
+              cumque quam nesciunt est enim voluptatibus sunt reprehenderit et
+              aperiam, cum ex culpa, ut incidunt numquam. Inventore a earum, in
+              laboriosam quod non omnis ipsam soluta distinctio quidem
+              doloremque et necessitatibus ipsum voluptas! Nam amet dolore
+              quisquam, harum libero officia aperiam? Illo illum quisquam
+              laborum quibusdam saepe repellat recusandae eius incidunt,
+              dignissimos excepturi nihil, reiciendis necessitatibus, laudantium
+              consectetur expedita dolorem? Culpa architecto corporis cumque
+              accusantium cum itaque enim porro quidem quaerat sapiente, sint
+              nulla corrupti molestias reprehenderit minima neque non ullam
+              dolore! Maxime ipsam harum deserunt eius nemo deleniti quia
+              fugiat, fugit quo labore id voluptatem nisi dignissimos quibusdam
+              unde iure provident expedita minus autem eveniet ipsum?
+              Exercitationem ratione facilis at blanditiis similique nemo
+              voluptatum dignissimos laboriosam hic, libero explicabo optio
+              deleniti debitis, sunt ab, dolore ea placeat voluptates aliquam
+              fuga aliquid quaerat ipsam corporis obcaecati? Enim omnis saepe
+              eum, commodi voluptatibus fuga dicta iste adipisci! Libero debitis
+              soluta praesentium quae nulla illo amet quos explicabo, sint esse
+              dolore non minima accusamus ea facilis quam nostrum ullam
+              perferendis dolorum impedit quod deserunt sapiente corporis
+              mollitia. Tempora nisi ea nostrum odio excepturi dolore placeat
+              quisquam omnis nemo animi, at quaerat veritatis magnam aperiam
+              nobis natus voluptate ducimus qui assumenda amet facilis
+              consectetur hic adipisci eum. Suscipit, aut reiciendis adipisci
+              impedit sit in quia autem necessitatibus officiis, dolore
+              praesentium. Vel voluptas fugiat odio magni ipsum perferendis,
+              praesentium cum iste eum natus similique nobis sequi. sdam
+              repellendus maiores molestiae consequuntur soluta officia
+              veritatis maxime atque magnam quas, dolorum minus! Eos odit minima
+              exercitationem illo a, repellendus suscipit nostrum accusantium
+              doloribus reprehenderit hic soluta! Quis facilis aliquid quae
+              quaerat minima molestiae placeat odit nostrum voluptatum eos
+              dolore harum dolorum nulla aliquam, neque numquam, itaque nihil,
+              eligendi assumenda soluta amet similique. Suscipit beatae pariatur
+              repudiandae esse. Vel aliquid fugit accusamus! Expedita deleniti
+              molestiae itaque, provident eaque ut eum porro earum non
+              perferendis sit esse natus, exercitationem, rem deserunt velit
+              ducimus numquam voluptas quo. Vitae quidem qui ea nobis. Nemo
+              repellat eligendi iste, qui perferendis ab velit ullam amet iusto
+              vitae? Fugit autem veniam cum atque at consectetur amet alias!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="collapse z-1 text-light" id="contact">
+        <div class="container-sm">
+          <div class="card mt-5 bg-transparent text-light border-0">
+            <img class="card-img-top" src="holder.js/100x180/" alt="Title" />
+            <div class="card-body text-center">
+              <h4 class="card-title">Contact me:</h4>
+              <p class="card-text">+48 796 144 888</p>
+              <p class="card-text">wojciech.galik@gmail.com</p>
+              <p class="card-text">
+                <a href="https://github.com/wgalik"
+                  ><i class="fa-brands fa-github text-light fs-1"></i>
+</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"></script>
+    <script>
+      const navbar = document.querySelector("nav");
+
+      document.addEventListener("click", () => {
+        // const navLink = document.querySelectorAll(".nav-link");
+        const show = document.querySelector(".show");
+        if (show) {
+          let id = show.id;
+          console.log(id);
+
+          show.classList.remove("show");
+          document
+            .querySelector(`[href="#${id}"]`)
+            .setAttribute("aria-expanded", "false");
+        }
+      });
+
+      setTimeout(() => {
+        navbar.classList.remove("d-none");
+        twinkle();
+      }, 4000);
+
+      const twinkle = () => {
+        for (let i = 0; i < 100; i++) {
+          const star = document.createElement("div");
+          star.classList.add("star");
+          star.style.top = `${Math.random() * 100}vh`;
+          star.style.left = `${Math.random() * 100}vw`;
+          star.style.animationDuration = `${1 + Math.random() * 2}s`;
+          star.style.animationDelay = `${Math.random() * 2}s`;
+          document.body.appendChild(star);
+        }
+      };
+
+      // $(document).ready(function () {
+      //   setTimeout(function () {
+      //     $("nav").removeClass("d-none");
+      //   }, 2500);
+
+      //   $("body").click(function () {
+      //     //   $(".show").fadeOut();
+      //     $(".show").removeClass("show");
+      //     //   $(".show").hide();
+      //   });
+      // });
+    </script>
+  </body>
+</html>
