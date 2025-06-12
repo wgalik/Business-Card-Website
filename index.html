@@ -15,7 +15,7 @@
       src="https://kit.fontawesome.com/e85828e76a.js"
       crossorigin="anonymous"></script>
     <style>
-      *,
+           *,
       ::before,
       ::after {
         margin: 0;
@@ -42,7 +42,7 @@
         top: calc(50% - 50vh);
         left: calc(50% - 50vw);
         color: transparent;
-        font-size: 20em;
+        font-size: 10rem;
         animation: light 3s linear 1s 1;
       }
       #code::after {
@@ -114,7 +114,7 @@
       #techs,
       #projects,
       #contact {
-        margin-top: 10%;
+        margin-top: 25%;
       }
 
       .star {
@@ -170,6 +170,43 @@
         height: 150px;
         object-fit: cover;
       }
+
+      #langBtnPL,
+      #langBtnEN {
+        margin: 10px;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+        border: 1.5px solid white;
+        box-shadow: -1px 0px 2px 0px #fff inset;
+        cursor: pointer;
+        top: 10px;
+        left: 10px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      #langBtnPL {
+        background-image: url("National_Flag_of_Poland.png");
+      }
+      #langBtnEN {
+        display: none;
+        background-image: url("united-kingdom-flag-icon.png");
+      }
+
+      @media (min-width: 576px) {
+        #code {
+          font-size: 20rem;
+        }
+        #about,
+        #techs,
+        #projects,
+        #contact {
+          margin-top: 15%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -178,7 +215,7 @@
         id="code"
         class="font-monospace fw-bold d-flex justify-content-center align-items-center"></div>
       <!-- navbar -->
-      <nav
+     <nav
         class="navbar navbar-expand-sm navbar-dark shadow position-fixed z-3 w-100 top-0 start-0 d-none">
         <div class="container-fluid align-items-baseline">
           <p class="font-monospace ms-2 fw-bold fs-3" id="logo"></p>
@@ -202,7 +239,17 @@
                   data-bs-toggle="collapse"
                   href="#about"
                   data-bs-target="#about"
+                  data-lang="EN"
                   >About me</a
+                >
+                <a
+                  class="nav-link d-none"
+                  aria-current="page"
+                  data-bs-toggle="collapse"
+                  href="#about"
+                  data-bs-target="#about"
+                  data-lang="PL"
+                  >O mnie</a
                 >
               </li>
               <li class="nav-item">
@@ -211,7 +258,16 @@
                   data-bs-toggle="collapse"
                   href="#techs"
                   data-bs-target="#techs"
+                  data-lang="EN"
                   >Technologies</a
+                >
+                <a
+                  class="nav-link d-none"
+                  data-bs-toggle="collapse"
+                  href="#techs"
+                  data-bs-target="#techs"
+                  data-lang="PL"
+                  >Technologie</a
                 >
               </li>
               <li class="nav-item">
@@ -220,21 +276,42 @@
                   data-bs-toggle="collapse"
                   href="#projects"
                   data-bs-target="#projects"
-                  href="#"
+                  data-lang="EN"
                   >Projects</a
+                >
+                <a
+                  class="nav-link d-none"
+                  data-bs-toggle="collapse"
+                  href="#projects"
+                  data-bs-target="#projects"
+                  data-lang="PL"
+                  >Projekty</a
                 >
               </li>
 
               <li class="nav-item">
                 <a
-                  id="cien"
                   class="nav-link"
                   data-bs-toggle="collapse"
                   href="#contact"
                   data-bs-target="#contact"
-                  href="#"
+                  data-lang="EN"
                   >Contact</a
                 >
+                <a
+                  class="nav-link d-none"
+                  data-bs-toggle="collapse"
+                  href="#contact"
+                  data-bs-target="#contact"
+                  data-lang="PL"
+                  >Kontakt</a
+                >
+              </li>
+              <li class="nav-item">
+                <button id="langBtnPL"></button>
+              </li>
+              <li class="nav-item">
+                <button id="langBtnEN"></button>
               </li>
             </ul>
           </div>
@@ -255,21 +332,21 @@
                 width="100%"
                 alt="" />
             </div>
-            <div class="col-12 col-md-9 border-start">
-              <h1 class="ps-md-2">About me</h1>
-              <p class="ps-md-2">
+           <div class="col-12 col-md-9 border-start">
+              <h1 class="ps-md-2" data-lang="EN">About me</h1>
+              <p class="ps-md-2" data-lang="EN">
                 Hi! My name is Wojtek and I’m a freelancer specializing in
                 creating websites.
               </p>
 
-              <p class="ps-md-2">
+              <p class="ps-md-2" data-lang="EN">
                 I’ve always been fascinated by technology and its impact on our
                 daily lives, which is why I decided to pursue a career in
                 building modern and functional websites. I treat every project
                 as a challenge and an opportunity to learn - and quickly picking
                 up new skills is one of my strongest traits.
               </p>
-              <p class="ps-md-2">
+              <p class="ps-md-2" data-lang="EN">
                 I’m not afraid of new technologies, and difficulties motivate me
                 to take action. I consistently strive to achieve my goals while
                 paying attention to aesthetics, usability, and detail. I believe
@@ -279,22 +356,57 @@
                 projects that not only look good but also perform well - fast,
                 smoothly, and reliably.
               </p>
-              <p class="ps-md-2">
+              <p class="ps-md-2" data-lang="EN">
                 In my work, I value communication, reliability, and meeting
                 deadlines. I enjoy challenges and gladly take on new projects
                 that let me use both creativity and logical thinking.
               </p>
-              <p class="ps-md-2">
+              <p class="ps-md-2" data-lang="EN">
                 If you’re looking for someone who can not only build a website
                 but also help turn your idea into a real, well-functioning
                 product - I’d love to work with you!
+              </p>
+              <h1 class="ps-md-2 d-none" data-lang="PL">O mnie</h1>
+              <p class="ps-md-2 d-none" data-lang="PL">
+                Cześć! Mam na imię Wojtek i jestem freelancerem specjalizującym
+                się w tworzeniu stron internetowych.
+              </p>
+
+              <p class="ps-md-2 d-none" data-lang="PL">
+                Od zawsze fascynowała mnie technologia i jej wpływ na naszą
+                codzienność, dlatego postanowiłem związać swoją ścieżkę zawodową
+                z tworzeniem nowoczesnych i funkcjonalnych stron internetowych.
+                Każdy projekt traktuję jak wyzwanie i okazję do nauki - a
+                szybkie przyswajanie nowych umiejętności to jedna z moich
+                najmocniejszych cech.
+              </p>
+              <p class="ps-md-2 d-none" data-lang="PL">
+                Nie boję się nowych technologii, a trudności motywują mnie do
+                działania. Konsekwentnie dążę do celu, dbając przy tym o
+                estetykę, użyteczność i detale. Stawiam na ciągły rozwój,
+                dlatego nieustannie poszerzam swoją wiedzę z zakresu front-endu,
+                WordPressa czy PHP. Dzięki temu mogę lepiej odpowiadać na
+                potrzeby moich klientów i tworzyć projekty, które nie tylko
+                dobrze wyglądają, ale przede wszystkim działają - szybko,
+                płynnie i bezproblemowo.
+              </p>
+              <p class="ps-md-2 d-none" data-lang="PL">
+                W pracy stawiam na komunikację, rzetelność i terminowość. Lubię
+                wyzwania i z przyjemnością podejmuję się nowych projektów, które
+                pozwalają mi wykorzystać kreatywność i logiczne myślenie.
+              </p>
+              <p class="ps-md-2 d-none" data-lang="PL">
+                Jeśli szukasz kogoś, kto nie tylko wykona stronę internetową,
+                ale również pomoże Ci przekształcić pomysł w realny, dobrze
+                funkcjonujący produkt - zapraszam do współpracy!
               </p>
             </div>
           </div>
         </div>
       </div>
       <div class="container collapse z-1 text-light" id="techs">
-        <h1 class="mb-5">Technologies</h1>
+        <h1 class="mb-5" data-lang="EN">Technologies</h1>
+        <h1 class="mb-5 d-none" data-lang="PL">Technologie</h1>
         <div class="row">
           <div class="col-sm-3 font-monospace mb-sm-4">HTML</div>
 
@@ -931,7 +1043,10 @@
           class="container-xl d-flex justify-content-center align-items-center">
           <div class="card mt-5 bg-transparent text-light border-0 w-50">
             <div class="card-body text-center">
-              <h1 class="card-title mb-3">Contact me:</h1>
+             <h1 class="card-title mb-3" data-lang="EN">Contact me:</h1>
+              <h1 class="card-title mb-3 d-none" data-lang="PL">
+                Skontaktuj się ze mną:
+              </h1>
               <a
                 class="card-link d-block text-light text-decoration-none p-1 fs-5"
                 href="tel:+48 796 144 888"
@@ -964,20 +1079,60 @@
       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
       crossorigin="anonymous"></script>
     <script>
-      const navLink = document.querySelectorAll(".nav-link");
+           const navLink = document.querySelectorAll(".nav-link");
       const navbar = document.querySelector("nav");
+
+      const langBtnPL = document.querySelector("#langBtnPL");
+      const langBtnEN = document.querySelector("#langBtnEN");
+
+      let isEN = true;
+
+      langBtnPL.addEventListener("click", () => {
+        if (isEN) {
+          document.querySelectorAll('[data-lang="PL"]').forEach((element) => {
+            element.classList.remove("d-none");
+          });
+          document.querySelectorAll('[data-lang="PL"]').forEach((element) => {
+            element.classList.add("d-block");
+          });
+          document.querySelectorAll('[data-lang="EN"]').forEach((element) => {
+            element.classList.add("d-none");
+          });
+
+          langBtnPL.style.display = "none";
+          langBtnEN.style.display = "block";
+          isEN = false;
+        }
+      });
+      langBtnEN.addEventListener("click", () => {
+        if (!isEN) {
+          document.querySelectorAll('[data-lang="EN"]').forEach((element) => {
+            element.classList.remove("d-none");
+          });
+          document.querySelectorAll('[data-lang="EN"]').forEach((element) => {
+            element.classList.add("d-block");
+          });
+          document.querySelectorAll('[data-lang="PL"]').forEach((element) => {
+            element.classList.add("d-none");
+          });
+
+          langBtnPL.style.display = "block";
+          langBtnEN.style.display = "none";
+          isEN = true;
+        }
+      });
 
       navLink.forEach((link) => {
         link.addEventListener("click", () => {
           const show = document.querySelector(".show");
           if (show) {
             let id = show.id;
-            console.log(id);
 
             show.classList.remove("show");
-            document
-              .querySelector(`[href="#${id}"]`)
-              .setAttribute("aria-expanded", "false");
+            let expanded = document.querySelectorAll(`[href="#${id}"]`);
+            expanded.forEach((element) => {
+              element.setAttribute("aria-expanded", "false");
+            });
           }
         });
       });
