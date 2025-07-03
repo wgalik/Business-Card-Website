@@ -111,8 +111,8 @@ const projectGlobs: Record<number, Record<string, unknown>> = {
   4: import.meta.glob('../assets/project_5/*.jpg', { eager: true, import: 'default' }),
 }
 
-for (let i = 0; i <= 4; i++) {
-  projectsImgs.push(Object.values(projectGlobs[i]))
+for (const key of Object.keys(projectGlobs)) {
+  projectsImgs.push(Object.values(projectGlobs[Number(key)]))
 }
 
 const projects = [
