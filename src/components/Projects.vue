@@ -1,9 +1,9 @@
 <template>
   <div class="container text-light" id="projects">
     <div class="row row-gap-4">
-      <div class="col-sm-12 col-md-6 col-lg-4" v-for="(project, index) in projects">
+      <div class="col-sm-12 col-md-6 col-lg-4" v-for="(project, index) in projects" :key="index">
         <div class="card text-center border bg-transparent text-light">
-          <img :src="projectsImgs[index][0]" class="card-img-top" alt="..." />
+          <img :src="projectsImgs[index][0]"  class="card-img-top" alt="..." />
           <div class="card-body">
             <h5 class="card-title">{{ project.name }}</h5>
             <p class="card-text">
@@ -49,7 +49,7 @@
                     <div
                       class="carousel-item"
                       v-for="(img, i) in projectsImgs[index]"
-                      :class="{ active: i == 0 }"
+                      :class="{ active: i == 0 }" :key="i"
                     >
                       <img :src="img" class="d-block w-75 mx-auto carousel-img" alt="..." />
                     </div>
@@ -100,7 +100,7 @@
 </template>
 
 <script setup lang="ts">
-const projectsImgs: any[] = []
+const projectsImgs: unknown[] = []
 const imgs_0 = Object.values(
   import.meta.glob('../assets/project_1/*.png', { eager: true, import: 'default' }),
 )
@@ -147,8 +147,8 @@ const projects = [
     techs: ' HTML5 | CSS3 | Bootstrap | Vue.js | TypeScript | Vite',
     page: ' wgalik.github.io/Business-Card-Website/',
     page_link: 'https://wgalik.github.io/Business-Card-Website/',
-    repo: ' github.com/wgalik/Business-Card-Website',
-    repo_link: 'github.com/wgalik/Business-Card-Website',
+    repo: ' github.com/wgalik/Business-Card-Website/tree/dev',
+    repo_link: 'https://github.com/wgalik/Business-Card-Website/tree/dev',
   },
   {
     name: 'Inspiring Quote App - Vue.js',
