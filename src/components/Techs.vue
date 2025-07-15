@@ -2,7 +2,7 @@
   <div class="container text-light" id="techs">
     <h1 class="mb-5" v-if="isEN">{{ headerEN }}</h1>
     <h1 class="mb-5" v-else>{{ headerPL }}</h1>
-    <div class="row" v-for="tech in techs">
+    <div class="row" v-for="tech in techs" :key="tech.name">
       <div class="col-sm-3 font-monospace mb-sm-4">{{ tech.name }}</div>
 
       <div class="progress p-0 col-sm-9 mb-4 mb-sm-4">

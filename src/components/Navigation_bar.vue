@@ -15,12 +15,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li v-show="isEN" v-for="page in pagesEN" class="nav-item">
+          <li v-show="isEN" v-for="page in pagesEN" :key="page.id" class="nav-item">
             <a class="nav-link" :href="page.href" :id="page.id" @click="navigate">{{
               page.name
             }}</a>
           </li>
-          <li v-show="!isEN" v-for="page in pagesPL" class="nav-item">
+          <li v-show="!isEN" v-for="page in pagesPL" :key="page.id" class="nav-item">
             <a class="nav-link" :href="page.href" :id="page.id" @click="navigate">{{
               page.name
             }}</a>
@@ -70,7 +70,7 @@ const toggleLang = () => {
 const navigate = (event: MouseEvent) => {
   const navLink = document.querySelectorAll('.nav-link')
   const navbarToggler = document.querySelectorAll('.navbar-toggler')
-  let links = document.querySelectorAll('.active')
+  const links = document.querySelectorAll('.active')
 
   if (links) {
     links.forEach((link) => link.classList.remove('active'))
