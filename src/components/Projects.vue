@@ -3,7 +3,11 @@
     <div class="row row-gap-4">
       <div class="col-sm-12 col-md-6 col-lg-4" v-for="(project, index) in projects" :key="index">
         <div class="card text-center border bg-transparent text-light">
-          <img :src="projectsImgs[index][0]" class="card-img-top" alt="..." />
+          <img
+            :src="Array.isArray(projectsImgs?.[index]) ? projectsImgs[index][0] : ''"
+            class="card-img-top"
+            alt="..."
+          />
           <div class="card-body">
             <h5 class="card-title">{{ project.name }}</h5>
             <p class="card-text">
