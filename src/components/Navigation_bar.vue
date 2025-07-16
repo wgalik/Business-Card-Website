@@ -30,7 +30,10 @@
             </li>
           </ul>
           <li class="nav-item">
-            <button :id="isEN ? 'langBtnPL' : 'langBtnEN'" @click="toggleLang"></button>
+            <button :id="isEN ? 'langBtnPL' : 'langBtnEN'" @click="toggleLang">
+              <img v-if="isEN" :src="flagPL" alt="flag" />
+              <img v-else :src="flagUK" alt="flag" />
+            </button>
           </li>
         </ul>
       </div>
@@ -41,6 +44,8 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import { defineEmits, inject } from 'vue'
+import flagPL from '../assets/National_Flag_of_Poland.png'
+import flagUK from '../assets/united-kingdom-flag-icon.png'
 
 const isEN = inject<Ref<boolean>>('isEN')
 if (!isEN) throw new Error('isEN not provided')

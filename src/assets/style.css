@@ -69,27 +69,28 @@ nav,
 
 #langBtnPL,
 #langBtnEN {
-  margin: 10px;
+  position: relative;
+  margin: 0 10px;
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  padding: 5px;
+  padding: 0 5px;
   border: 1.5px solid white;
-  box-shadow: -1px 0px 2px 0px #fff inset;
   cursor: pointer;
   top: 10px;
   left: 10px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+}
+#langBtnPL img,
+#langBtnEN img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
 }
 
-#langBtnPL {
-  background-image: url('National_Flag_of_Poland.png');
-}
-#langBtnEN {
-  background-image: url('united-kingdom-flag-icon.png');
-}
 .carousel-img {
   height: 400px;
   object-fit: contain;
