@@ -1,9 +1,12 @@
 {
+  "homepage": "https://wgalik.github.io/Business-Card-Website/",
   "name": "business_card",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
@@ -25,6 +28,7 @@
     "@vue/tsconfig": "^0.7.0",
     "eslint": "^9.29.0",
     "eslint-plugin-vue": "~10.2.0",
+    "gh-pages": "^6.3.0",
     "jiti": "^2.4.2",
     "npm-run-all2": "^8.0.4",
     "prettier": "3.5.3",
