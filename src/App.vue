@@ -20,11 +20,11 @@
 import type { Component } from 'vue'
 import { ref, computed, onMounted, provide, defineAsyncComponent } from 'vue'
 
-import Home from './components/Home.vue'
+import Home from './components/HomePage.vue'
 import AboutMe from './components/AboutMe.vue'
-import Techs from './components/Techs.vue'
-import Projects from './components/Projects.vue'
-import Contact from './components/Contact.vue'
+import Techs from './components/TechsPage.vue'
+import Projects from './components/ProjectsPage.vue'
+import Contact from './components/ContactPage.vue'
 
 type ViewName = 'Home' | 'AboutMe' | 'Techs' | 'Projects' | 'Contact'
 
@@ -37,7 +37,7 @@ const NavigationBar = defineAsyncComponent<Component>(
   () =>
     new Promise((resolve) => {
       setTimeout(() => {
-        resolve(import('./components/Navigation_bar.vue'))
+        resolve(import('./components/NavigationBar.vue'))
         intro.value = !intro.value
       }, 4000)
     }),
@@ -63,21 +63,17 @@ const twinkle = () => {
   for (let i = 0; i < 100; i++) {
     const star = document.createElement('div')
     star.classList.add('star')
-    const starStyle = {
-      position: 'absolute',
-      top: `${Math.random() * 98}vh`,
-      left: `${Math.random() * 98}vw`,
-      width: '2px',
-      height: '2px',
-      backgroundColor: 'white',
-      borderRadius: '50%',
-      animation: 'twinkle 2s infinite',
-      animationDuration: `${1 + Math.random() * 2}s`,
-      animationDelay: `${Math.random() * 2}s`,
-    }
-    for (const key in starStyle) {
-      ;(star.style as any)[key] = starStyle[key as keyof typeof starStyle]
-    }
+    star.style.position = 'absolute'
+    star.style.top = `${Math.random() * 98}vh`
+    star.style.left = `${Math.random() * 98}vw`
+    star.style.width = '2px'
+    star.style.height = '2px'
+    star.style.backgroundColor = 'white'
+    star.style.borderRadius = '50%'
+    star.style.animation = 'twinkle 2s infinite'
+    star.style.animationDuration = `${1 + Math.random() * 2}s`
+    star.style.animationDelay = `${Math.random() * 2}s`
+
     document.body.appendChild(star)
   }
 }

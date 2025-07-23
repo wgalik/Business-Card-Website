@@ -111,8 +111,9 @@ const projectGlobs: Record<number, Record<string, unknown>> = {
   0: import.meta.glob('../assets/project_1/*.jpg', { eager: true, import: 'default' }),
   1: import.meta.glob('../assets/project_2/*.jpg', { eager: true, import: 'default' }),
   2: import.meta.glob('../assets/project_3/*.jpg', { eager: true, import: 'default' }),
-  3: import.meta.glob('../assets/project_4/*.jpg', { eager: true, import: 'default' }),
-  4: import.meta.glob('../assets/project_5/*.jpg', { eager: true, import: 'default' }),
+  3: import.meta.glob('../assets/project_6/*.jpg', { eager: true, import: 'default' }),
+  4: import.meta.glob('../assets/project_4/*.jpg', { eager: true, import: 'default' }),
+  5: import.meta.glob('../assets/project_5/*.jpg', { eager: true, import: 'default' }),
 }
 
 for (const key of Object.keys(projectGlobs)) {
@@ -154,6 +155,17 @@ const projects = [
     page_link: 'https://wgalik.github.io/Inspiring-quote-app---Vue.js/',
     repo: ' github.com/wgalik/Inspiring-quote-app---Vue.js',
     repo_link: 'https://github.com/wgalik/Inspiring-quote-app---Vue.js',
+  },
+  {
+    name: 'Weather App - React',
+    shortDescription: 'A simple and responsive weather application built with React.',
+    description:
+      'A simple and responsive weather application built with React and styled using SCSS. It fetches real-time weather data using a public REST API.',
+    techs: '  React | SCSS | JavaScript | CRA | REST API',
+    page: ' wgalik.github.io/weather-app---react/',
+    page_link: 'https://wgalik.github.io/weather-app---react/',
+    repo: ' github.com/wgalik/weather-app---react/tree/dev',
+    repo_link: 'https://github.com/wgalik/weather-app---react/tree/dev',
   },
   {
     name: 'Interactive Image Grid Portfolio',
