@@ -34,9 +34,9 @@ const techs = [
   { name: 'jQuery', width: '60%' },
   { name: 'React', width: '40%' },
   { name: 'Vue.js', width: '40%' },
-  { name: 'TypeScript', width: '40%' },
-  { name: 'PHP ', width: '40%' },
-  { name: 'WordPress ', width: '40%' },
+  { name: 'TypeScript', width: '20%' },
+  { name: 'PHP ', width: '20%' },
+  { name: 'WordPress ', width: '20%' },
   { name: 'Git ', width: '60%' },
 ]
 </script>

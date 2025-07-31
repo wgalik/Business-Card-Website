@@ -191,6 +191,17 @@ const projects = [
     repo: ' github.com/wgalik/Flex-Box-Menu---Vanilla-JS',
     repo_link: 'https://github.com/wgalik/Flex-Box-Menu---Vanilla-JS',
   },
+  {
+    name: 'Memory-Game -React',
+    shortDescription: 'A multi-level memory card game built with React and Webpack.',
+    description:
+      'A multi-level memory card game built with React and Webpack. Test your memory skills by flipping cards, advancing through difficulty levels, and tracking your score. Clean transitions and state management make for a smooth and interactive experience.',
+    techs: '  React | SCSS | React Router | React Context API | React Transition Group | Webpack',
+    page: ' wgalik.github.io/Memory-Game---React/',
+    page_link: 'https://wgalik.github.io/Memory-Game---React/',
+    repo: ' github.com/wgalik/Memory-Game---React',
+    repo_link: 'https://github.com/wgalik/Memory-Game---React',
+  },
 ]
 </script>
 
