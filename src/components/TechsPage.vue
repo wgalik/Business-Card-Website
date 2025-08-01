@@ -26,9 +26,9 @@ const headerEN = 'Technologies'
 const headerPL = 'Technologie'
 
 const techs = [
-  { name: 'HTML', width: '80%' },
-  { name: 'CSS', width: '80%' },
-  { name: 'Bootstrap', width: '60%' },
+  { name: 'HTML5', width: '80%' },
+  { name: 'CSS3', width: '80%' },
+  { name: 'Bootstrap 5', width: '60%' },
   { name: 'SCSS (Sass)', width: '80%' },
   { name: 'JavaScript (ES6+)', width: '60%' },
   { name: 'jQuery', width: '60%' },
