@@ -146,7 +146,7 @@ const projects = [
     repo_link: 'https://github.com/wgalik/Business-Card-Website/tree/dev',
   },
   {
-    name: 'Memory-Game -React',
+    name: 'Memory-Game',
     shortDescription: 'A multi-level memory card game built with React and Webpack.',
     description:
       'A multi-level memory card game built with React and Webpack. Test your memory skills by flipping cards, advancing through difficulty levels, and tracking your score. Clean transitions and state management make for a smooth and interactive experience.',
@@ -157,7 +157,7 @@ const projects = [
     repo_link: 'https://github.com/wgalik/Memory-Game---React',
   },
   {
-    name: 'Inspiring Quote App - Vue.js',
+    name: 'Inspiring Quote App',
     shortDescription: 'A simple and elegant web application built with Vue 3 and Vite.',
     description:
       'A simple and elegant web application built with Vue 3 and Vite that fetches and displays random inspirational quotes from a REST API. Users can generate a new quote with a single click.',
@@ -168,7 +168,7 @@ const projects = [
     repo_link: 'https://github.com/wgalik/Inspiring-quote-app---Vue.js',
   },
   {
-    name: 'Weather App - React',
+    name: 'Weather App',
     shortDescription: 'A simple and responsive weather application built with React.',
     description:
       'A simple and responsive weather application built with React and styled using SCSS. It fetches real-time weather data using a public REST API.',
