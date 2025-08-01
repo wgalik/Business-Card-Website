@@ -110,10 +110,11 @@ const projectsImgs: unknown[] = []
 const projectGlobs: Record<number, Record<string, unknown>> = {
   0: import.meta.glob('../assets/project_1/*.jpg', { eager: true, import: 'default' }),
   1: import.meta.glob('../assets/project_2/*.jpg', { eager: true, import: 'default' }),
-  2: import.meta.glob('../assets/project_3/*.jpg', { eager: true, import: 'default' }),
-  3: import.meta.glob('../assets/project_6/*.jpg', { eager: true, import: 'default' }),
-  4: import.meta.glob('../assets/project_4/*.jpg', { eager: true, import: 'default' }),
-  5: import.meta.glob('../assets/project_5/*.jpg', { eager: true, import: 'default' }),
+  2: import.meta.glob('../assets/project_7/*.jpg', { eager: true, import: 'default' }),
+  3: import.meta.glob('../assets/project_3/*.jpg', { eager: true, import: 'default' }),
+  4: import.meta.glob('../assets/project_6/*.jpg', { eager: true, import: 'default' }),
+  5: import.meta.glob('../assets/project_4/*.jpg', { eager: true, import: 'default' }),
+  6: import.meta.glob('../assets/project_5/*.jpg', { eager: true, import: 'default' }),
 }
 
 for (const key of Object.keys(projectGlobs)) {
@@ -133,7 +134,6 @@ const projects = [
     repo: ' github.com/wgalik/project_WG',
     repo_link: 'https://github.com/wgalik/project_WG',
   },
-
   {
     name: 'Business Card Website',
     shortDescription: 'This is my personal front-end developer portfolio.',
@@ -146,11 +146,22 @@ const projects = [
     repo_link: 'https://github.com/wgalik/Business-Card-Website/tree/dev',
   },
   {
+    name: 'Memory-Game -React',
+    shortDescription: 'A multi-level memory card game built with React and Webpack.',
+    description:
+      'A multi-level memory card game built with React and Webpack. Test your memory skills by flipping cards, advancing through difficulty levels, and tracking your score. Clean transitions and state management make for a smooth and interactive experience.',
+    techs: '  React | SCSS | React Router | React Context API | React Transition Group | Webpack',
+    page: ' wgalik.github.io/Memory-Game---React/',
+    page_link: 'https://wgalik.github.io/Memory-Game---React/',
+    repo: ' github.com/wgalik/Memory-Game---React',
+    repo_link: 'https://github.com/wgalik/Memory-Game---React',
+  },
+  {
     name: 'Inspiring Quote App - Vue.js',
     shortDescription: 'A simple and elegant web application built with Vue 3 and Vite.',
     description:
       'A simple and elegant web application built with Vue 3 and Vite that fetches and displays random inspirational quotes from a REST API. Users can generate a new quote with a single click.',
-    techs: ' HTML5 | Sass | Bootstrap | Vue.js | Vite | REST API',
+    techs: ' HTML5 | SCSS | Bootstrap | Vue.js | Vite | REST API',
     page: ' wgalik.github.io/Inspiring-quote-app---Vue.js/',
     page_link: 'https://wgalik.github.io/Inspiring-quote-app---Vue.js/',
     repo: ' github.com/wgalik/Inspiring-quote-app---Vue.js',
@@ -190,17 +201,6 @@ const projects = [
     page_link: 'https://wgalik.github.io/Flex-Box-Menu---Vanilla-JS/',
     repo: ' github.com/wgalik/Flex-Box-Menu---Vanilla-JS',
     repo_link: 'https://github.com/wgalik/Flex-Box-Menu---Vanilla-JS',
-  },
-  {
-    name: 'Memory-Game -React',
-    shortDescription: 'A multi-level memory card game built with React and Webpack.',
-    description:
-      'A multi-level memory card game built with React and Webpack. Test your memory skills by flipping cards, advancing through difficulty levels, and tracking your score. Clean transitions and state management make for a smooth and interactive experience.',
-    techs: '  React | SCSS | React Router | React Context API | React Transition Group | Webpack',
-    page: ' wgalik.github.io/Memory-Game---React/',
-    page_link: 'https://wgalik.github.io/Memory-Game---React/',
-    repo: ' github.com/wgalik/Memory-Game---React',
-    repo_link: 'https://github.com/wgalik/Memory-Game---React',
   },
 ]
 </script>

@@ -29,15 +29,15 @@ const techs = [
   { name: 'HTML', width: '80%' },
   { name: 'CSS', width: '80%' },
   { name: 'Bootstrap', width: '60%' },
-  { name: 'Sass', width: '80%' },
-  { name: 'JavaScript', width: '60%' },
+  { name: 'SCSS (Sass)', width: '80%' },
+  { name: 'JavaScript (ES6+)', width: '60%' },
   { name: 'jQuery', width: '60%' },
   { name: 'React', width: '40%' },
   { name: 'Vue.js', width: '40%' },
   { name: 'TypeScript', width: '20%' },
-  { name: 'PHP ', width: '20%' },
-  { name: 'WordPress ', width: '20%' },
-  { name: 'Git ', width: '60%' },
+  { name: 'PHP', width: '20%' },
+  { name: 'WordPress', width: '20%' },
+  { name: 'Git / GitHub', width: '60%' },
 ]
 </script>
 
