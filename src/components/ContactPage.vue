@@ -22,7 +22,11 @@
             ><i class="fa-brands fa-whatsapp text-light fs-3"></i
           ></a>
 
-          <a class="card-link" href="https://github.com/wgalik"
+          <a
+            class="card-link"
+            href="https://github.com/wgalik"
+            target="_blank"
+            rel="noopener noreferrer"
             ><i class="fa-brands fa-github text-light fs-3"></i>
           </a>
         </div>

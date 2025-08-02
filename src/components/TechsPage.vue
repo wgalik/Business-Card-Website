@@ -33,7 +33,7 @@ const techs = [
   { name: 'JavaScript (ES6+)', width: '60%' },
   { name: 'jQuery', width: '60%' },
   { name: 'React', width: '40%' },
-  { name: 'Vue.js', width: '40%' },
+  { name: 'Vue.js 3', width: '40%' },
   { name: 'TypeScript', width: '20%' },
   { name: 'PHP', width: '20%' },
   { name: 'WordPress', width: '20%' },

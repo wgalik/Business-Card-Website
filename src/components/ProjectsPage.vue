@@ -85,13 +85,21 @@
                 <h6 class="card-text">Technologies used:</h6>
                 <p class="font-monospace">{{ project.techs }}</p>
                 <p class="mt-5">
-                  <a class="text-light text-decoration-none" :href="project.page_link"
+                  <a
+                    class="text-light text-decoration-none"
+                    :href="project.page_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     ><i class="fa-solid fa-link"></i> {{ project.page }}</a
                   >
                 </p>
 
                 <p>
-                  <a class="text-light text-decoration-none" :href="project.repo_link"
+                  <a
+                    class="text-light text-decoration-none"
+                    :href="project.repo_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     ><i class="fa-brands fa-github text-light"> </i> {{ project.repo }}</a
                   >
                 </p>

@@ -68,8 +68,6 @@ const pagesPL = [
 ]
 
 const toggleLang = () => {
-  console.log(isEN.value)
-
   isEN.value = !isEN.value
   if (isEN.value === true) {
     document.documentElement.lang = 'en'
