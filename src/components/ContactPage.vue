@@ -18,7 +18,11 @@
           ><i class="fa-solid fa-envelope fs-6"></i> wojciech.galik@gmail.com</a
         >
         <div class="card-text d-flex justify-content-center align-items-center gap-3 mt-3">
-          <a class="card-link" href="https://wa.me/+48796144888"
+          <a
+            class="card-link"
+            href="https://wa.me/+48796144888"
+            target="_blank"
+            rel="noopener noreferrer"
             ><i class="fa-brands fa-whatsapp text-light fs-3"></i
           ></a>
 
