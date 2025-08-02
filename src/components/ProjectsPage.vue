@@ -113,8 +113,9 @@ const projectGlobs: Record<number, Record<string, unknown>> = {
   2: import.meta.glob('../assets/project_7/*.jpg', { eager: true, import: 'default' }),
   3: import.meta.glob('../assets/project_3/*.jpg', { eager: true, import: 'default' }),
   4: import.meta.glob('../assets/project_6/*.jpg', { eager: true, import: 'default' }),
-  5: import.meta.glob('../assets/project_4/*.jpg', { eager: true, import: 'default' }),
-  6: import.meta.glob('../assets/project_5/*.jpg', { eager: true, import: 'default' }),
+  5: import.meta.glob('../assets/project_8/*.jpg', { eager: true, import: 'default' }),
+  6: import.meta.glob('../assets/project_4/*.jpg', { eager: true, import: 'default' }),
+  7: import.meta.glob('../assets/project_5/*.jpg', { eager: true, import: 'default' }),
 }
 
 for (const key of Object.keys(projectGlobs)) {
@@ -177,6 +178,18 @@ const projects = [
     page_link: 'https://wgalik.github.io/weather-app---react/',
     repo: ' github.com/wgalik/weather-app---react/tree/dev',
     repo_link: 'https://github.com/wgalik/weather-app---react/tree/dev',
+  },
+  {
+    name: '6/49 Lottery Game',
+    shortDescription:
+      'A simple and interactive web-based version of the classic 6/49 lottery game.',
+    description:
+      'A simple and interactive web-based version of the classic 6/49 lottery game. Players can manually pick their numbers or use the Quick Pick option, and then compare their selection with randomly drawn numbers.',
+    techs: '  HTML5 | CSS3 | Flexbox | Vanilla JavaScript (ES6)',
+    page: ' wgalik.github.io/lotto_game/',
+    page_link: 'https://wgalik.github.io/lotto_game/',
+    repo: ' github.com/wgalik/lotto_game',
+    repo_link: 'https://github.com/wgalik/lotto_game',
   },
   {
     name: 'Interactive Image Grid Portfolio',
