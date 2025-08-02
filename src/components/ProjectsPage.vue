@@ -147,7 +147,7 @@ const projects = [
     repo_link: 'https://github.com/wgalik/Business-Card-Website/tree/dev',
   },
   {
-    name: 'Memory-Game',
+    name: 'Memory Game',
     shortDescription: 'A multi-level memory card game built with React and Webpack.',
     description:
       'A multi-level memory card game built with React and Webpack. Test your memory skills by flipping cards, advancing through difficulty levels, and tracking your score. Clean transitions and state management make for a smooth and interactive experience.',
