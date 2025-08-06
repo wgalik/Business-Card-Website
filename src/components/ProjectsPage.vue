@@ -121,9 +121,10 @@ const projectGlobs: Record<number, Record<string, unknown>> = {
   2: import.meta.glob('../assets/project_7/*.jpg', { eager: true, import: 'default' }),
   3: import.meta.glob('../assets/project_3/*.jpg', { eager: true, import: 'default' }),
   4: import.meta.glob('../assets/project_6/*.jpg', { eager: true, import: 'default' }),
-  5: import.meta.glob('../assets/project_8/*.jpg', { eager: true, import: 'default' }),
-  6: import.meta.glob('../assets/project_4/*.jpg', { eager: true, import: 'default' }),
-  7: import.meta.glob('../assets/project_5/*.jpg', { eager: true, import: 'default' }),
+  5: import.meta.glob('../assets/project_9/*.jpg', { eager: true, import: 'default' }),
+  6: import.meta.glob('../assets/project_8/*.jpg', { eager: true, import: 'default' }),
+  7: import.meta.glob('../assets/project_4/*.jpg', { eager: true, import: 'default' }),
+  8: import.meta.glob('../assets/project_5/*.jpg', { eager: true, import: 'default' }),
 }
 
 for (const key of Object.keys(projectGlobs)) {
@@ -187,6 +188,20 @@ const projects = [
     repo: ' github.com/wgalik/weather-app---react/tree/dev',
     repo_link: 'https://github.com/wgalik/weather-app---react/tree/dev',
   },
+
+  {
+    name: 'Landing Page',
+    shortDescription:
+      'A responsive and modern portfolio website for photographers, built with HTML5, SCSS, jQuery, and responsive design techniques.',
+    description:
+      'A responsive and modern portfolio website for photographers, built with HTML5, SCSS (Sass), JavaScript (jQuery), and responsive design techniques. This project is designed for photographers who want to showcase their work in an elegant, user-friendly format.',
+    techs: '  HTML5 | SCSS | Flexbox | CSS Grid | jQuery',
+    page: ' wgalik.github.io/landing-page/',
+    page_link: 'https://wgalik.github.io/landing-page/',
+    repo: ' github.com/wgalik/landing-page',
+    repo_link: 'https://github.com/wgalik/landing-page',
+  },
+
   {
     name: '6/49 Lottery Game',
     shortDescription:
