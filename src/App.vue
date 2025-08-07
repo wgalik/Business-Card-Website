@@ -1,11 +1,6 @@
 <template>
   <header>
-    <div v-if="intro">
-      <div
-        id="code"
-        class="font-monospace fw-bold d-flex justify-content-center align-items-center"
-      ></div>
-    </div>
+    <HomePage v-if="intro" />
     <NavigationBar />
   </header>
 
@@ -32,12 +27,19 @@ if (window.location.pathname !== '/Business-Card-Website/') {
   timeDeley = 0
 }
 
+const HomePage = defineAsyncComponent<Component>(
+  () =>
+    new Promise((resolve) => {
+      resolve(import('./components/HomePage.vue'))
+    }),
+)
+
 const NavigationBar = defineAsyncComponent<Component>(
   () =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve(import('./components/NavigationBar.vue'))
-        intro.value = !intro.value
+        if (intro.value) intro.value = !intro.value
       }, timeDeley)
     }),
 )

@@ -149,7 +149,7 @@ const projects = [
     shortDescription: 'This is my personal front-end developer portfolio.',
     description:
       'This is my personal front-end developer portfolio. The website presents who I am, my technical skills, and selected projects in an engaging and interactive way. ',
-    techs: ' HTML5 | CSS3 | Bootstrap | Vue.js | TypeScript | Vite',
+    techs: ' HTML5 | CSS3 | Bootstrap | Vue.js | TypeScript | Vue Router | Vite',
     page: ' wgalik.github.io/Business-Card-Website/',
     page_link: 'https://wgalik.github.io/Business-Card-Website/',
     repo: ' github.com/wgalik/Business-Card-Website/tree/dev',
