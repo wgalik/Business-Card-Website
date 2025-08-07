@@ -8,4 +8,11 @@ import router from './router/router.ts'
 
 const app = createApp(App)
 
-app.use(router).mount('#app')
+const redirect = sessionStorage.redirect
+if (redirect) {
+  sessionStorage.removeItem('redirect')
+  router.replace(redirect)
+}
+
+app.use(router)
+app.mount('#app')
