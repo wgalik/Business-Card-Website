@@ -6,32 +6,31 @@
         class="font-monospace fw-bold d-flex justify-content-center align-items-center"
       ></div>
     </div>
-    <NavigationBar @navigate="changeView" />
+    <NavigationBar />
   </header>
 
   <main>
     <Transition name="fade" appear mode="out-in">
-      <component :is="currentComponent" />
+      <RouterView />
     </Transition>
   </main>
 </template>
 
 <script setup lang="ts">
 import type { Component } from 'vue'
-import { ref, computed, onMounted, provide, defineAsyncComponent } from 'vue'
-
-import Home from './components/HomePage.vue'
-import AboutMe from './components/AboutMe.vue'
-import Techs from './components/TechsPage.vue'
-import Projects from './components/ProjectsPage.vue'
-import Contact from './components/ContactPage.vue'
-
-type ViewName = 'Home' | 'AboutMe' | 'Techs' | 'Projects' | 'Contact'
+import { ref, onMounted, provide, defineAsyncComponent } from 'vue'
 
 const intro = ref(true)
 const isEN = ref(true)
 
 provide('isEN', isEN)
+
+let timeDeley = 4000
+
+if (window.location.pathname !== '/Business-Card-Website/') {
+  intro.value = !intro.value
+  timeDeley = 0
+}
 
 const NavigationBar = defineAsyncComponent<Component>(
   () =>
@@ -39,25 +38,9 @@ const NavigationBar = defineAsyncComponent<Component>(
       setTimeout(() => {
         resolve(import('./components/NavigationBar.vue'))
         intro.value = !intro.value
-      }, 4000)
+      }, timeDeley)
     }),
 )
-
-const currentView = ref<ViewName>('Home')
-
-const components: Record<ViewName, Component> = {
-  Home,
-  AboutMe,
-  Techs,
-  Projects,
-  Contact,
-}
-
-const currentComponent = computed(() => components[currentView.value])
-
-const changeView = (view: ViewName) => {
-  currentView.value = view
-}
 
 const twinkle = () => {
   for (let i = 0; i < 100; i++) {
@@ -81,7 +64,7 @@ const twinkle = () => {
 const start = () => {
   setTimeout(() => {
     twinkle()
-  }, 4000)
+  }, timeDeley)
 }
 
 onMounted(() => {
