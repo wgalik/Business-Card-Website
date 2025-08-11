@@ -4,7 +4,7 @@
       <p class="font-monospace mt-2 ms-2 fw-bold fs-3" id="logo"></p>
 
       <button
-        class="navbar-toggler navbar-dark"
+        class="navbar-toggler navbar-dark ms-auto"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent"
@@ -14,29 +14,20 @@
         <span class="navbar-toggler-icon navbar-dark"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0" v-if="isEN">
-            <li v-for="page in pagesEN" :key="page.id" class="nav-item">
-              <RouterLink class="nav-link" :to="page.href" :id="page.id">{{
-                page.name
-              }}</RouterLink>
-            </li>
-          </ul>
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0" v-else>
-            <li v-for="page in pagesPL" :key="page.id" class="nav-item">
-              <RouterLink class="nav-link" :to="page.href" :id="page.id">{{
-                page.name
-              }}</RouterLink>
-            </li>
-          </ul>
-          <li class="nav-item">
-            <button :id="isEN ? 'langBtnPL' : 'langBtnEN'" @click.prevent="toggleLang">
-              <img v-if="isEN" :src="flagPL" alt="flag" />
-              <img v-else :src="flagUK" alt="flag" />
-            </button>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0" v-if="isEN">
+          <li v-for="page in pagesEN" :key="page.id" class="nav-item">
+            <RouterLink class="nav-link" :to="page.href" :id="page.id">{{ page.name }}</RouterLink>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0" v-else>
+          <li v-for="page in pagesPL" :key="page.id" class="nav-item">
+            <RouterLink class="nav-link" :to="page.href" :id="page.id">{{ page.name }}</RouterLink>
           </li>
         </ul>
       </div>
+      <button class="d-flex justify-content-center align-items-center rounded-circle ms-3 me-2 mb-2 mb-lg-0 overflow-hidden" :id="isEN ? 'langBtnPL' : 'langBtnEN'" @click="toggleLang">
+        <img class="w-100 h-100" :src="isEN ? flagPL : flagUK" alt="flag" />
+      </button>
     </div>
   </nav>
 </template>
