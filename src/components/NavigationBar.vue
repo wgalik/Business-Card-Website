@@ -74,13 +74,11 @@ const toggleLang = () => {
 const handleClick = () => {
   const navbarToggler = document.querySelector('button.navbar-toggler')
   const show = document.querySelector('.show')
-  console.log(navbarToggler)
 
   if (show && navbarToggler) {
     show.classList.remove('show')
     navbarToggler.setAttribute('aria-expanded', 'false')
     navbarToggler.classList.add('collapsed')
-    // console.log(navbarToggler)
   }
 }
 </script>
