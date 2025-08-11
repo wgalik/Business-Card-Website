@@ -16,12 +16,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0" v-if="isEN">
           <li v-for="page in pagesEN" :key="page.id" class="nav-item">
-            <RouterLink class="nav-link" :to="page.href" :id="page.id">{{ page.name }}</RouterLink>
+            <RouterLink class="nav-link" :to="page.href" :id="page.id" @:click="handleClick"
+              >{{ page.name }}
+            </RouterLink>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0" v-else>
           <li v-for="page in pagesPL" :key="page.id" class="nav-item">
-            <RouterLink class="nav-link" :to="page.href" :id="page.id">{{ page.name }}</RouterLink>
+            <RouterLink class="nav-link" :to="page.href" :id="page.id" @:click="handleClick">{{
+              page.name
+            }}</RouterLink>
           </li>
         </ul>
       </div>
@@ -64,6 +68,19 @@ const toggleLang = () => {
     document.documentElement.lang = 'en'
   } else {
     document.documentElement.lang = 'pl'
+  }
+}
+
+const handleClick = () => {
+  const navbarToggler = document.querySelector('button.navbar-toggler')
+  const show = document.querySelector('.show')
+  console.log(navbarToggler)
+
+  if (show && navbarToggler) {
+    show.classList.remove('show')
+    navbarToggler.setAttribute('aria-expanded', 'false')
+    navbarToggler.classList.add('collapsed')
+    // console.log(navbarToggler)
   }
 }
 </script>
