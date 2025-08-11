@@ -1,6 +1,6 @@
 <template>
   <div class="container text-light" id="techs">
-    <h1 class="mb-5">{{ isEN ? headerEN : headerPL }}</h1>
+    <h1 class="mb-5">{{ header }}</h1>
     <div class="row" v-for="tech in techs" :key="tech.name">
       <div class="col-sm-3 font-monospace mb-sm-4">{{ tech.name }}</div>
 
@@ -16,13 +16,12 @@
 
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import { inject } from 'vue'
+import { inject, computed } from 'vue'
 
 const isEN = inject<Ref<boolean>>('isEN')
 if (!isEN) throw new Error('isEN not provided')
 
-const headerEN = 'Technologies'
-const headerPL = 'Technologie'
+const header = computed(() => (isEN.value ? 'Technologies' : 'Technologie'))
 
 const techs = [
   { name: 'HTML5', width: '80%' },

@@ -5,7 +5,7 @@
   >
     <div class="card bg-transparent text-light border-0 w-50">
       <div class="card-body text-center">
-        <h1 class="card-title mb-3">{{ isEN ? headerEN : headerPL }}</h1>
+        <h1 class="card-title mb-3">{{ header }}</h1>
         <a
           class="card-link d-block text-light text-decoration-none p-1 fs-5"
           href="tel:+48 796 144 888"
@@ -40,13 +40,12 @@
 
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import { inject } from 'vue'
+import { inject, computed } from 'vue'
 
 const isEN = inject<Ref<boolean>>('isEN')
 if (!isEN) throw new Error('isEN not provided')
 
-const headerEN = 'Contact me:'
-const headerPL = 'Skontaktuj się ze mną:'
+const header = computed(() => (isEN.value ? 'Contact me:' : 'Skontaktuj się ze mną:'))
 </script>
 
 <style></style>

@@ -15,8 +15,11 @@ import type { Component } from 'vue'
 import { ref, onMounted, provide, defineAsyncComponent } from 'vue'
 
 const isEN = ref(true)
+const intro = ref(true)
 
 provide('isEN', isEN)
+
+provide('intro', intro)
 
 let timeDeley = 4000
 
@@ -33,39 +36,34 @@ const NavigationBar = defineAsyncComponent<Component>(
     }),
 )
 
-const twinkle = () => {
-  for (let i = 0; i < 100; i++) {
-    const star = document.createElement('div')
-    star.classList.add('star')
-    star.style.position = 'absolute'
-    star.style.top = `${Math.random() * 98}vh`
-    star.style.left = `${Math.random() * 98}vw`
-    star.style.width = '2px'
-    star.style.height = '2px'
-    star.style.backgroundColor = 'white'
-    star.style.borderRadius = '50%'
-    star.style.animation = 'twinkle 2s infinite'
-    star.style.animationDuration = `${1 + Math.random() * 2}s`
-    star.style.animationDelay = `${Math.random() * 2}s`
-
-    document.body.appendChild(star)
-  }
-}
-
-const start = () => {
+const stars = () => {
   setTimeout(() => {
-    twinkle()
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div')
+      star.classList.add('star')
+      star.style.position = 'absolute'
+      star.style.top = `${Math.random() * 98}vh`
+      star.style.left = `${Math.random() * 98}vw`
+      star.style.width = '2px'
+      star.style.height = '2px'
+      star.style.backgroundColor = 'white'
+      star.style.borderRadius = '50%'
+      star.style.animation = 'twinkle 2s infinite'
+      star.style.animationDuration = `${1 + Math.random() * 2}s`
+      star.style.animationDelay = `${Math.random() * 2}s`
+
+      document.body.appendChild(star)
+    }
+    intro.value = !intro.value
   }, timeDeley)
 }
 
 onMounted(() => {
-  start()
+  stars()
 })
 </script>
 
 <style>
-@import './assets/style.css';
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;

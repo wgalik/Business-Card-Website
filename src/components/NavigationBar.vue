@@ -25,7 +25,11 @@
           </li>
         </ul>
       </div>
-      <button class="d-flex justify-content-center align-items-center rounded-circle ms-3 me-2 mb-2 mb-lg-0 overflow-hidden" :id="isEN ? 'langBtnPL' : 'langBtnEN'" @click="toggleLang">
+      <button
+        class="d-flex justify-content-center align-items-center rounded-circle ms-3 me-2 mb-2 mb-lg-0 overflow-hidden"
+        :id="isEN ? 'langBtnPL' : 'langBtnEN'"
+        @click="toggleLang"
+      >
         <img class="w-100 h-100" :src="isEN ? flagPL : flagUK" alt="flag" />
       </button>
     </div>
