@@ -1,4 +1,4 @@
-<template>
+<template v-if="intro">
   <div
     id="code"
     class="font-monospace fw-bold d-flex justify-content-center align-items-center"

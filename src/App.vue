@@ -1,6 +1,5 @@
 <template>
   <header>
-    <HomePage v-if="intro" />
     <NavigationBar />
   </header>
 
@@ -26,13 +25,6 @@ if (window.location.pathname !== '/Business-Card-Website/') {
   intro.value = !intro.value
   timeDeley = 0
 }
-
-const HomePage = defineAsyncComponent<Component>(
-  () =>
-    new Promise((resolve) => {
-      resolve(import('./components/HomePage.vue'))
-    }),
-)
 
 const NavigationBar = defineAsyncComponent<Component>(
   () =>
