@@ -5,8 +5,7 @@
   >
     <div class="card bg-transparent text-light border-0 w-50">
       <div class="card-body text-center">
-        <h1 class="card-title mb-3" v-if="isEN">{{ headerEN }}</h1>
-        <h1 class="card-title mb-3" v-else>{{ headerPL }}</h1>
+        <h1 class="card-title mb-3">{{ isEN ? headerEN : headerPL }}</h1>
         <a
           class="card-link d-block text-light text-decoration-none p-1 fs-5"
           href="tel:+48 796 144 888"

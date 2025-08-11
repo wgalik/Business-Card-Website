@@ -14,7 +14,6 @@
 import type { Component } from 'vue'
 import { ref, onMounted, provide, defineAsyncComponent } from 'vue'
 
-const intro = ref(true)
 const isEN = ref(true)
 
 provide('isEN', isEN)
@@ -22,7 +21,6 @@ provide('isEN', isEN)
 let timeDeley = 4000
 
 if (window.location.pathname !== '/Business-Card-Website/') {
-  intro.value = !intro.value
   timeDeley = 0
 }
 
@@ -31,7 +29,6 @@ const NavigationBar = defineAsyncComponent<Component>(
     new Promise((resolve) => {
       setTimeout(() => {
         resolve(import('./components/NavigationBar.vue'))
-        if (intro.value) intro.value = !intro.value
       }, timeDeley)
     }),
 )

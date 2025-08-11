@@ -22,7 +22,7 @@
               }}</RouterLink>
             </li>
           </ul>
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0" v-if="!isEN">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0" v-else>
             <li v-for="page in pagesPL" :key="page.id" class="nav-item">
               <RouterLink class="nav-link" :to="page.href" :id="page.id">{{
                 page.name

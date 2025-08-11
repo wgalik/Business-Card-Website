@@ -1,7 +1,6 @@
 <template>
   <div class="container text-light" id="techs">
-    <h1 class="mb-5" v-if="isEN">{{ headerEN }}</h1>
-    <h1 class="mb-5" v-else>{{ headerPL }}</h1>
+    <h1 class="mb-5">{{ isEN ? headerEN : headerPL }}</h1>
     <div class="row" v-for="tech in techs" :key="tech.name">
       <div class="col-sm-3 font-monospace mb-sm-4">{{ tech.name }}</div>
 
@@ -34,7 +33,7 @@ const techs = [
   { name: 'jQuery', width: '60%' },
   { name: 'React', width: '40%' },
   { name: 'Vue.js 3', width: '40%' },
-  { name: 'TypeScript', width: '20%' },
+  { name: 'TypeScript', width: '40%' },
   { name: 'PHP', width: '20%' },
   { name: 'WordPress', width: '20%' },
   { name: 'Git / GitHub', width: '60%' },
