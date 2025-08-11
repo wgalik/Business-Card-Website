@@ -22,8 +22,6 @@ if (!intro) throw new Error('intro not provided')
 const header = computed(() =>
   isEN.value ? 'Hi, I’m Wojtek, Frontend Developer' : 'Witaj! Jestem Wojtek, Frontend Developer',
 )
-
-console.log(intro)
 </script>
 
 <style></style>
