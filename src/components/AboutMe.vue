@@ -18,13 +18,10 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from 'vue'
-import { inject } from 'vue'
 import portrait from '../assets/portret.jpg'
 import AboutMeEN from './AboutMeEN.vue'
 import AboutMePL from './AboutMePL.vue'
 
-const isEN = inject<Ref<boolean>>('isEN')
-if (!isEN) throw new Error('isEN not provided')
+const { isEN } = defineProps(['isEN'])
 </script>
 <style></style>

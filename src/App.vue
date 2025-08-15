@@ -1,23 +1,21 @@
 <template>
   <header>
-    <NavigationBar />
+    <NavigationBar @click="toggleLang" :isEN />
   </header>
 
   <main>
     <Transition name="fade" appear mode="out-in">
-      <RouterView :intro />
+      <RouterView :intro :isEN />
     </Transition>
   </main>
 </template>
 
 <script setup lang="ts">
 import type { Component } from 'vue'
-import { ref, onMounted, provide, defineAsyncComponent } from 'vue'
+import { ref, onMounted, defineAsyncComponent } from 'vue'
 
 const isEN = ref(true)
 const intro = ref(true)
-
-provide('isEN', isEN)
 
 let timeDeley = 4000
 
@@ -33,6 +31,15 @@ const NavigationBar = defineAsyncComponent<Component>(
       }, timeDeley)
     }),
 )
+
+const toggleLang = () => {
+  isEN.value = !isEN.value
+  if (isEN.value) {
+    document.documentElement.lang = 'en'
+  } else {
+    document.documentElement.lang = 'pl'
+  }
+}
 
 const stars = () => {
   setTimeout(() => {

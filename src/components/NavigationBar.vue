@@ -30,9 +30,10 @@
         </ul>
       </div>
       <button
-        class="d-flex justify-content-center align-items-center rounded-circle ms-3 me-2 mb-2 mb-lg-0 overflow-hidden"
+        v-show="visible"
+        class="justify-content-center align-items-center rounded-circle ms-3 me-2 mb-2 mb-lg-0 overflow-hidden"
         :id="isEN ? 'langBtnPL' : 'langBtnEN'"
-        @click="toggleLang"
+        @click="emit('click')"
       >
         <img class="w-100 h-100" :src="isEN ? flagPL : flagUK" alt="flag" />
       </button>
@@ -41,13 +42,14 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from 'vue'
-import { inject } from 'vue'
 import flagPL from '../assets/National_Flag_of_Poland.png'
 import flagUK from '../assets/united-kingdom-flag-icon.png'
 
-const isEN = inject<Ref<boolean>>('isEN')
-if (!isEN) throw new Error('isEN not provided')
+import { ref } from 'vue'
+const visible = ref(true)
+
+const { isEN } = defineProps(['isEN'])
+const emit = defineEmits(['click'])
 
 const pagesEN = [
   { name: 'About me', href: '/about', id: 'AboutMe' },
@@ -62,23 +64,20 @@ const pagesPL = [
   { name: 'Kontakt', href: '/contact', id: 'Contact' },
 ]
 
-const toggleLang = () => {
-  isEN.value = !isEN.value
-  if (isEN.value) {
-    document.documentElement.lang = 'en'
-  } else {
-    document.documentElement.lang = 'pl'
-  }
-}
-
-const handleClick = () => {
+const handleClick = (event: MouseEvent) => {
   const navbarToggler = document.querySelector('button.navbar-toggler')
   const show = document.querySelector('.show')
-
+  const target = event.target as HTMLElement | null
   if (show && navbarToggler) {
     show.classList.remove('show')
     navbarToggler.setAttribute('aria-expanded', 'false')
     navbarToggler.classList.add('collapsed')
+  }
+
+  if (target && target.id === 'Projects') {
+    visible.value = false
+  } else {
+    visible.value = true
   }
 }
 </script>

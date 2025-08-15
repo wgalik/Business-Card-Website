@@ -5,7 +5,7 @@
   >
     <div class="card bg-transparent text-light border-0 w-50">
       <div class="card-body text-center">
-        <h1 class="card-title mb-3">{{ header }}</h1>
+        <h1 class="card-title mb-3">{{ isEN ? 'Contact me:' : 'Skontaktuj się ze mną:' }}</h1>
         <a
           class="card-link d-block text-light text-decoration-none p-1 fs-5"
           href="tel:+48 796 144 888"
@@ -39,13 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from 'vue'
-import { inject, computed } from 'vue'
-
-const isEN = inject<Ref<boolean>>('isEN')
-if (!isEN) throw new Error('isEN not provided')
-
-const header = computed(() => (isEN.value ? 'Contact me:' : 'Skontaktuj się ze mną:'))
+const { isEN } = defineProps(['isEN'])
 </script>
 
 <style></style>
