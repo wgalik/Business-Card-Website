@@ -5,7 +5,7 @@
 
   <main>
     <Transition name="fade" appear mode="out-in">
-      <RouterView />
+      <RouterView :intro />
     </Transition>
   </main>
 </template>
@@ -18,8 +18,6 @@ const isEN = ref(true)
 const intro = ref(true)
 
 provide('isEN', isEN)
-
-provide('intro', intro)
 
 let timeDeley = 4000
 

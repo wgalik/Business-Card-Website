@@ -12,12 +12,10 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import { inject, computed } from 'vue'
+const { intro } = defineProps(['intro'])
 
 const isEN = inject<Ref<boolean>>('isEN')
 if (!isEN) throw new Error('isEN not provided')
-
-const intro = inject<Ref<boolean>>('intro')
-if (!intro) throw new Error('intro not provided')
 
 const header = computed(() =>
   isEN.value ? 'Hi, I’m Wojtek, Frontend Developer' : 'Witaj! Jestem Wojtek, Frontend Developer',

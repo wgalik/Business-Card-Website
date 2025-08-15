@@ -16,14 +16,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0" v-if="isEN">
           <li v-for="page in pagesEN" :key="page.id" class="nav-item">
-            <RouterLink class="nav-link" :to="page.href" :id="page.id" @:click="handleClick"
+            <RouterLink class="nav-link" :to="page.href" :id="page.id" @click="handleClick"
               >{{ page.name }}
             </RouterLink>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0" v-else>
           <li v-for="page in pagesPL" :key="page.id" class="nav-item">
-            <RouterLink class="nav-link" :to="page.href" :id="page.id" @:click="handleClick">{{
+            <RouterLink class="nav-link" :to="page.href" :id="page.id" @click="handleClick">{{
               page.name
             }}</RouterLink>
           </li>
@@ -64,7 +64,7 @@ const pagesPL = [
 
 const toggleLang = () => {
   isEN.value = !isEN.value
-  if (isEN.value === true) {
+  if (isEN.value) {
     document.documentElement.lang = 'en'
   } else {
     document.documentElement.lang = 'pl'
