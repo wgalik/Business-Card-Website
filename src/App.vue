@@ -4,9 +4,11 @@
   </header>
 
   <main>
-    <Transition name="fade" appear mode="out-in">
-      <RouterView :intro :isEN />
-    </Transition>
+    <RouterView v-slot="{ Component }">
+      <Transition name="fade" appear mode="out-in">
+        <component :is="Component" :intro :isEN />
+      </Transition>
+    </RouterView>
   </main>
 </template>
 
