@@ -121,10 +121,11 @@ const projectGlobs: Record<number, Record<string, unknown>> = {
   2: import.meta.glob('../assets/project_7/*.jpg', { eager: true, import: 'default' }),
   3: import.meta.glob('../assets/project_3/*.jpg', { eager: true, import: 'default' }),
   4: import.meta.glob('../assets/project_6/*.jpg', { eager: true, import: 'default' }),
-  5: import.meta.glob('../assets/project_9/*.jpg', { eager: true, import: 'default' }),
-  6: import.meta.glob('../assets/project_8/*.jpg', { eager: true, import: 'default' }),
-  7: import.meta.glob('../assets/project_4/*.jpg', { eager: true, import: 'default' }),
-  8: import.meta.glob('../assets/project_5/*.jpg', { eager: true, import: 'default' }),
+  5: import.meta.glob('../assets/project_10/*.jpg', { eager: true, import: 'default' }),
+  6: import.meta.glob('../assets/project_9/*.jpg', { eager: true, import: 'default' }),
+  7: import.meta.glob('../assets/project_8/*.jpg', { eager: true, import: 'default' }),
+  8: import.meta.glob('../assets/project_4/*.jpg', { eager: true, import: 'default' }),
+  9: import.meta.glob('../assets/project_5/*.jpg', { eager: true, import: 'default' }),
 }
 
 for (const key of Object.keys(projectGlobs)) {
@@ -188,7 +189,17 @@ const projects = [
     repo: ' github.com/wgalik/weather-app---react/tree/dev',
     repo_link: 'https://github.com/wgalik/weather-app---react/tree/dev',
   },
-
+  {
+    name: 'ToDo App',
+    shortDescription: 'A simple and modern ToDo application built with Vue 3 Composition API.',
+    description:
+      'A simple and modern ToDo application built with Vue 3 Composition API. It allows users to add, mark, and delete tasks, set deadlines, and mark tasks as important. The app features a minimal design with glassmorphism UI, smooth shadows, and esponsive form inputs. This project demonstrates component-based architecture, state management with reactivity, and user-friendly form handling. It is designed as a portfolio project to showcase my front-end development skills with Vue.',
+    techs: ' HTML5 | SCSS | Vue.js | Vite',
+    page: ' wgalik.github.io/ToDo-App/',
+    page_link: 'https://wgalik.github.io/ToDo-App/',
+    repo: ' https://github.com/wgalik/ToDo-App/tree/main',
+    repo_link: 'https://github.com/wgalik/ToDo-App/tree/main',
+  },
   {
     name: 'Landing Page',
     shortDescription:
