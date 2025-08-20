@@ -122,10 +122,12 @@ const projectGlobs: Record<number, Record<string, unknown>> = {
   3: import.meta.glob('../assets/project_3/*.jpg', { eager: true, import: 'default' }),
   4: import.meta.glob('../assets/project_6/*.jpg', { eager: true, import: 'default' }),
   5: import.meta.glob('../assets/project_10/*.jpg', { eager: true, import: 'default' }),
-  6: import.meta.glob('../assets/project_9/*.jpg', { eager: true, import: 'default' }),
-  7: import.meta.glob('../assets/project_8/*.jpg', { eager: true, import: 'default' }),
-  8: import.meta.glob('../assets/project_4/*.jpg', { eager: true, import: 'default' }),
-  9: import.meta.glob('../assets/project_5/*.jpg', { eager: true, import: 'default' }),
+  6: import.meta.glob('../assets/project_11/*.jpg', { eager: true, import: 'default' }),
+  7: import.meta.glob('../assets/project_9/*.jpg', { eager: true, import: 'default' }),
+  8: import.meta.glob('../assets/project_8/*.jpg', { eager: true, import: 'default' }),
+  9: import.meta.glob('../assets/project_12/*.jpg', { eager: true, import: 'default' }),
+  10: import.meta.glob('../assets/project_4/*.jpg', { eager: true, import: 'default' }),
+  11: import.meta.glob('../assets/project_5/*.jpg', { eager: true, import: 'default' }),
 }
 
 for (const key of Object.keys(projectGlobs)) {
@@ -136,9 +138,9 @@ const projects = [
   {
     name: 'Rent an Art...',
     shortDescription:
-      'Rent an Art... is a fictional web application developed as my graduation project.',
+      'Rent an Art is a conceptual web application developed for my graduation project.',
     description:
-      'Rent an Art... is a fictional web application developed as my graduation project. It focuses on designing a modern, clean, and fully functional frontend interface for an art rental service. The app is built entirely using HTML, CSS, and JavaScript – with no backend integration. ',
+      'Rent an Art is a fictional web application developed as a university diploma project. The main goal was to design an intuitive and visually appealing frontend for an art rental platform, built entirely with frontend technologies (HTML, CSS, JS) without the use of backend frameworks. The application leverages Local Storage to store user data such as the shopping cart and preferences, allowing the state to be preserved between sessions. This project is part of my frontend portfolio.',
     techs: ' HTML5 | CSS3 | JavaScript | jQuery | Bootstrap | REST API',
     page: ' wgalik.github.io/project_WG/',
     page_link: 'https://wgalik.github.io/project_WG/',
@@ -149,7 +151,7 @@ const projects = [
     name: 'Business Card Website',
     shortDescription: 'This is my personal front-end developer portfolio.',
     description:
-      'This is my personal front-end developer portfolio. The website presents who I am, my technical skills, and selected projects in an engaging and interactive way. ',
+      'This is my personal front-end developer portfolio website, designed to showcase my skills, experience, and projects in a clear and engaging way. The application is built with Vue 3 (Composition API) and leverages modern tools and best practices, including TypeScript and Vite for fast development and optimized builds. It makes use of ref and computed properties to handle state and logic efficiently, and integrates Vue Router to provide smooth navigation between sections. To enhance accessibility and user experience, the website includes a language toggle (PL/EN), allowing visitors to easily switch between English and Polish. The design is enriched with CSS animations, giving the portfolio a modern, interactive feel while keeping performance in mind. This project reflects not only my technical skills as a front-end developer, but also my focus on clean design, responsive layout, and intuitive user experience.',
     techs: ' HTML5 | CSS3 | Bootstrap | Vue.js | TypeScript | Vue Router | Vite',
     page: ' wgalik.github.io/Business-Card-Website/',
     page_link: 'https://wgalik.github.io/Business-Card-Website/',
@@ -160,7 +162,7 @@ const projects = [
     name: 'Memory Game',
     shortDescription: 'A multi-level memory card game built with React and Webpack.',
     description:
-      'A multi-level memory card game built with React and Webpack. Test your memory skills by flipping cards, advancing through difficulty levels, and tracking your score. Clean transitions and state management make for a smooth and interactive experience.',
+      'A multi-level memory card game built with React and Webpack. This project challenges players to test and improve their memory by flipping cards, matching pairs, and progressing through increasingly difficult levels. The game features a scoring system, smooth animated transitions, and dynamic difficulty scaling to keep players engaged. Under the hood, it demonstrates strong use of React Router for navigation between levels, React Context API for managing global state (score, progress, settings), and React Transition Group for fluid animations. Styling is handled with SCSS, while Webpack provides a fully customized build setup. The project highlights my ability to combine game logic, state management, and UI transitions into an interactive, responsive, and fun web application.',
     techs: '  React | SCSS | React Router | React Context API | React Transition Group | Webpack',
     page: ' wgalik.github.io/Memory-Game---React/',
     page_link: 'https://wgalik.github.io/Memory-Game---React/',
@@ -171,7 +173,7 @@ const projects = [
     name: 'Inspiring Quote App',
     shortDescription: 'A simple and elegant web application built with Vue 3 and Vite.',
     description:
-      'A simple and elegant web application built with Vue 3 and Vite that fetches and displays random inspirational quotes from a REST API. Users can generate a new quote with a single click.',
+      'A simple and elegant web application built with Vue 3 and Vite. This project connects to a REST API to fetch and display random inspirational quotes in a clean and minimalistic interface. With a single click, users can instantly generate a new quote, making the app both engaging and refreshing. The application is styled with SCSS and Bootstrap, ensuring a modern and responsive design that looks great on any device. It demonstrates practical use of Vue 3 Options API, API integration, and state reactivity, all bundled in a lightweight, performant setup powered by Vite. This project highlights my ability to build API-driven applications, focus on user experience, and deliver a polished front-end with clear code structure and maintainable styling.',
     techs: ' HTML5 | SCSS | Bootstrap | Vue.js | Vite | REST API',
     page: ' wgalik.github.io/Inspiring-quote-app---Vue.js/',
     page_link: 'https://wgalik.github.io/Inspiring-quote-app---Vue.js/',
@@ -182,7 +184,7 @@ const projects = [
     name: 'Weather App',
     shortDescription: 'A simple and responsive weather application built with React.',
     description:
-      'A simple and responsive weather application built with React and styled using SCSS. It fetches real-time weather data using a public REST API.',
+      'A simple and responsive web application built with React and styled using SCSS. This project fetches real-time weather data from a public REST API, allowing users to quickly check current weather conditions in any city. The interface is clean, intuitive, and fully responsive, ensuring a seamless experience across desktop and mobile devices. The app demonstrates effective use of React state and props for dynamic data rendering, proper API integration, and a modular component structure. It showcases my ability to build functional, interactive, and visually appealing applications that are both performant and user-friendly.',
     techs: '  React | SCSS | JavaScript | CRA | REST API',
     page: ' wgalik.github.io/weather-app---react/',
     page_link: 'https://wgalik.github.io/weather-app---react/',
@@ -199,6 +201,18 @@ const projects = [
     page_link: 'https://wgalik.github.io/ToDo-App/',
     repo: ' https://github.com/wgalik/ToDo-App/tree/main',
     repo_link: 'https://github.com/wgalik/ToDo-App/tree/main',
+  },
+
+  {
+    name: 'Expense Tracker',
+    shortDescription: 'A simple and interactive Expense Tracker application built with React.',
+    description:
+      'A modern and user-friendly Expense Tracker built with React. This application allows users to easily manage their personal finances by adding income and expenses, categorizing transactions, and instantly visualizing spending habits with interactive charts. With a clean and responsive design, it provides a clear overview of the current balance, detailed transaction history, and expense distribution across categories. The project demonstrates practical use of React hooks, form validation, state management, and data visualization (Chart.js). It is designed as a lightweight but powerful tool that can be further extended with features like editing, deleting, or saving transactions in local storage. Perfect for anyone looking to improve budgeting and track financial activity in a simple yet effective way.',
+    techs: '  React | Bootstrap | Chart.js | JavaScript (ES6+) | Vite',
+    page: ' wgalik.github.io/expence-tracker/',
+    page_link: 'https://wgalik.github.io/expence-tracker/',
+    repo: ' github.com/wgalik/expence-tracker',
+    repo_link: 'https://github.com/wgalik/expence-tracker',
   },
   {
     name: 'Landing Page',
@@ -224,6 +238,17 @@ const projects = [
     page_link: 'https://wgalik.github.io/lotto_game/',
     repo: ' github.com/wgalik/lotto_game',
     repo_link: 'https://github.com/wgalik/lotto_game',
+  },
+  {
+    name: 'Guitar Tuner',
+    shortDescription: 'Simple guitar tuner built with HTML, CSS, and Vanilla JavaScript',
+    description:
+      'A simple guitar tuner built with HTML, CSS, and Vanilla JavaScript, using Tone.js for sound synthesis. This project was created as a portfolio piece to practice frontend development skills.',
+    techs: '  HTML5 | CSS3 | JavaScript (ES6+) | Tone.js',
+    page: ' wgalik.github.io/guitar-tuner/',
+    page_link: 'https://wgalik.github.io/guitar-tuner/',
+    repo: ' github.com/wgalik/guitar-tuner',
+    repo_link: 'https://github.com/wgalik/guitar-tuner',
   },
   {
     name: 'Interactive Image Grid Portfolio',
