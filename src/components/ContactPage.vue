@@ -13,7 +13,7 @@
         >
         <a
           class="card-link d-block text-light text-decoration-none p-1 fs-5"
-          href="mailto:wojciełóch.galik@gmail.com"
+          href="mailto:wojciech.galik@gmail.com"
           ><i class="fa-solid fa-envelope fs-6"></i> wojciech.galik@gmail.com</a
         >
         <div class="card-text d-flex justify-content-center align-items-center gap-3 mt-3">
