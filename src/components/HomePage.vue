@@ -6,7 +6,7 @@
   ></div>
   <div v-else id="welcome" class="d-flex justify-content-center align-items-center">
     <h1 class="text-center font-monospace fw-bold m-5 mt-0 lh-base">
-      {{ isEN ? 'Hi, I’m Wojtek, Frontend Developer' : 'Witaj! Jestem Wojtek, Frontend Developer' }}
+      {{ isEN ? 'Hi, I’m Wojtek, Web Developer' : 'Witaj! Jestem Wojtek, Web Developer' }}
     </h1>
   </div>
 </template>

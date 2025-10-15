@@ -13,8 +13,7 @@
   <p class="ps-md-2">
     I am not afraid of new technologies, and difficulties motivate me to take action. I consistently
     strive to achieve my goals while paying attention to aesthetics, usability, and detail. I
-    believe in continuous development, so I am constantly expanding my knowledge in front-end
-    development, WordPress, and PHP. This allows me to better respond to my clients' needs and
+    believe in continuous development, so I am constantly expanding my knowledge in web development. This allows me to better respond to my clients' needs and
     create projects that not only look good but also perform well - fast, smoothly, and reliably.
   </p>
   <p class="ps-md-2">

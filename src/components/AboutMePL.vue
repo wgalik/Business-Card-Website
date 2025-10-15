@@ -14,7 +14,7 @@
   <p class="ps-md-2">
     Nie boję się nowych technologii, a trudności motywują mnie do działania. Konsekwentnie dążę do
     celu, dbając przy tym o estetykę, użyteczność i detale. Stawiam na ciągły rozwój, dlatego
-    nieustannie poszerzam swoją wiedzę z zakresu front-endu, WordPressa czy PHP. Dzięki temu mogę
+    nieustannie poszerzam swoją wiedzę z zakresu budowy stron internetowych. Dzięki temu mogę
     lepiej odpowiadać na potrzeby moich klientów i tworzyć projekty, które nie tylko dobrze
     wyglądają, ale przede wszystkim działają - szybko, płynnie i bezproblemowo.
   </p>
