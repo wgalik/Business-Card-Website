@@ -1,5 +1,20 @@
 <template>
   <div class="container text-light" id="projects">
+    <p class="mb-5 lead lh-lg">
+      {{
+        isEN
+          ? 'This site displays 12 selected projects, and the full set of 20+ additional repositories is available on my '
+          : 'Ta strona prezentuje 12 wybranych projektów, a pełny zestaw ponad 20 dodatkowych repozytoriów jest dostępny na moim '
+      }}
+      <a
+        class="link-light link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+        href="https://github.com/wgalik"
+        target="_blank"
+        rel="noopener noreferrer"
+        >{{ isEN ? 'GitHub profile.' : 'profilu GitHub.' }}
+      </a>
+    </p>
+
     <div class="row row-gap-4">
       <div class="col-sm-12 col-md-6 col-lg-4" v-for="(project, index) in projects" :key="index">
         <div class="card text-center border bg-transparent text-light">
@@ -113,40 +128,10 @@
 </template>
 
 <script setup lang="ts">
+const { isEN } = defineProps(['isEN'])
 const projectsImgs: unknown[] = []
 
-const projectGlobs: Record<number, Record<string, unknown>> = {
-  0: import.meta.glob('../assets/project_1/*.jpg', { eager: true, import: 'default' }),
-  1: import.meta.glob('../assets/project_2/*.jpg', { eager: true, import: 'default' }),
-  2: import.meta.glob('../assets/project_7/*.jpg', { eager: true, import: 'default' }),
-  3: import.meta.glob('../assets/project_3/*.jpg', { eager: true, import: 'default' }),
-  4: import.meta.glob('../assets/project_6/*.jpg', { eager: true, import: 'default' }),
-  5: import.meta.glob('../assets/project_10/*.jpg', { eager: true, import: 'default' }),
-  6: import.meta.glob('../assets/project_11/*.jpg', { eager: true, import: 'default' }),
-  7: import.meta.glob('../assets/project_9/*.jpg', { eager: true, import: 'default' }),
-  8: import.meta.glob('../assets/project_8/*.jpg', { eager: true, import: 'default' }),
-  9: import.meta.glob('../assets/project_12/*.jpg', { eager: true, import: 'default' }),
-  10: import.meta.glob('../assets/project_4/*.jpg', { eager: true, import: 'default' }),
-  11: import.meta.glob('../assets/project_5/*.jpg', { eager: true, import: 'default' }),
-}
-
-for (const key of Object.keys(projectGlobs)) {
-  projectsImgs.push(Object.values(projectGlobs[Number(key)]))
-}
-
 const projects = [
-  {
-    name: 'Rent an Art...',
-    shortDescription:
-      'Rent an Art is a conceptual web application developed for my graduation project.',
-    description:
-      'Rent an Art is a fictional web application developed as a university diploma project. The main goal was to design an intuitive and visually appealing frontend for an art rental platform, built entirely with frontend technologies (HTML, CSS, JS) without the use of backend frameworks. The application leverages Local Storage to store user data such as the shopping cart and preferences, allowing the state to be preserved between sessions. This project is part of my frontend portfolio.',
-    techs: ' HTML5 | CSS3 | JavaScript | jQuery | Bootstrap | REST API',
-    page: ' wgalik.github.io/project_WG/',
-    page_link: 'https://wgalik.github.io/project_WG/',
-    repo: ' github.com/wgalik/project_WG',
-    repo_link: 'https://github.com/wgalik/project_WG',
-  },
   {
     name: 'Business Card Website',
     shortDescription: 'This is my personal front-end developer portfolio.',
@@ -157,6 +142,7 @@ const projects = [
     page_link: 'https://wgalik.github.io/Business-Card-Website/',
     repo: ' github.com/wgalik/Business-Card-Website/tree/dev',
     repo_link: 'https://github.com/wgalik/Business-Card-Website/tree/dev',
+    img_folder: 'project_2',
   },
   {
     name: 'Memory Game',
@@ -168,17 +154,7 @@ const projects = [
     page_link: 'https://wgalik.github.io/Memory-Game---React/',
     repo: ' github.com/wgalik/Memory-Game---React',
     repo_link: 'https://github.com/wgalik/Memory-Game---React',
-  },
-  {
-    name: 'Inspiring Quote App',
-    shortDescription: 'A simple and elegant web application built with Vue 3 and Vite.',
-    description:
-      'A simple and elegant web application built with Vue 3 and Vite. This project connects to a REST API to fetch and display random inspirational quotes in a clean and minimalistic interface. With a single click, users can instantly generate a new quote, making the app both engaging and refreshing. The application is styled with SCSS and Bootstrap, ensuring a modern and responsive design that looks great on any device. It demonstrates practical use of Vue 3 Options API, API integration, and state reactivity, all bundled in a lightweight, performant setup powered by Vite. This project highlights my ability to build API-driven applications, focus on user experience, and deliver a polished front-end with clear code structure and maintainable styling.',
-    techs: ' HTML5 | SCSS | Bootstrap | Vue.js | Vite | REST API',
-    page: ' wgalik.github.io/Inspiring-quote-app---Vue.js/',
-    page_link: 'https://wgalik.github.io/Inspiring-quote-app---Vue.js/',
-    repo: ' github.com/wgalik/Inspiring-quote-app---Vue.js',
-    repo_link: 'https://github.com/wgalik/Inspiring-quote-app---Vue.js',
+    img_folder: 'project_7',
   },
   {
     name: 'Weather App',
@@ -190,6 +166,7 @@ const projects = [
     page_link: 'https://wgalik.github.io/weather-app---react/',
     repo: ' github.com/wgalik/weather-app---react/tree/dev',
     repo_link: 'https://github.com/wgalik/weather-app---react/tree/dev',
+    img_folder: 'project_6',
   },
   {
     name: 'ToDo App',
@@ -201,8 +178,8 @@ const projects = [
     page_link: 'https://wgalik.github.io/ToDo-App/',
     repo: ' https://github.com/wgalik/ToDo-App/tree/main',
     repo_link: 'https://github.com/wgalik/ToDo-App/tree/main',
+    img_folder: 'project_10',
   },
-
   {
     name: 'Expense Tracker',
     shortDescription: 'A simple and interactive Expense Tracker application built with React.',
@@ -213,20 +190,33 @@ const projects = [
     page_link: 'https://wgalik.github.io/expence-tracker/',
     repo: ' github.com/wgalik/expence-tracker',
     repo_link: 'https://github.com/wgalik/expence-tracker',
+    img_folder: 'project_11',
   },
   {
-    name: 'Landing Page',
-    shortDescription:
-      'A responsive and modern portfolio website for photographers, built with HTML5, SCSS, jQuery, and responsive design techniques.',
+    name: 'Inspiring Quote App',
+    shortDescription: 'A simple and elegant web application built with Vue 3 and Vite.',
     description:
-      'A responsive and modern portfolio website for photographers, built with HTML5, SCSS (Sass), JavaScript (jQuery), and responsive design techniques. This project is designed for photographers who want to showcase their work in an elegant, user-friendly format.',
-    techs: '  HTML5 | SCSS | Flexbox | CSS Grid | jQuery',
-    page: ' wgalik.github.io/landing-page/',
-    page_link: 'https://wgalik.github.io/landing-page/',
-    repo: ' github.com/wgalik/landing-page',
-    repo_link: 'https://github.com/wgalik/landing-page',
+      'A simple and elegant web application built with Vue 3 and Vite. This project connects to a REST API to fetch and display random inspirational quotes in a clean and minimalistic interface. With a single click, users can instantly generate a new quote, making the app both engaging and refreshing. The application is styled with SCSS and Bootstrap, ensuring a modern and responsive design that looks great on any device. It demonstrates practical use of Vue 3 Options API, API integration, and state reactivity, all bundled in a lightweight, performant setup powered by Vite. This project highlights my ability to build API-driven applications, focus on user experience, and deliver a polished front-end with clear code structure and maintainable styling.',
+    techs: ' HTML5 | SCSS | Bootstrap | Vue.js | Vite | REST API',
+    page: ' wgalik.github.io/Inspiring-quote-app---Vue.js/',
+    page_link: 'https://wgalik.github.io/Inspiring-quote-app---Vue.js/',
+    repo: ' github.com/wgalik/Inspiring-quote-app---Vue.js',
+    repo_link: 'https://github.com/wgalik/Inspiring-quote-app---Vue.js',
+    img_folder: 'project_3',
   },
-
+  {
+    name: 'Tip Calculator App',
+    shortDescription:
+      'A responsive Tip Calculator built with HTML, SCSS (with PostCSS), and TypeScript.',
+    description:
+      'A responsive Tip Calculator built with HTML, SCSS (with PostCSS), and TypeScript, designed as part of a Frontend Mentor challenge. This app allows users to calculate the tip amount per person and the total cost per person based on the bill, selected tip percentage, and number of people.',
+    techs: '  HTML5 | SCSS | PostCSS  | TypeScript',
+    page: ' wgalik.github.io/tip-calculator-app-main_TypeScript/',
+    page_link: 'https://wgalik.github.io/tip-calculator-app-main_TypeScript/',
+    repo: ' github.com/wgalik/tip-calculator-app-main_TypeScript',
+    repo_link: 'https://github.com/wgalik/tip-calculator-app-main_TypeScript',
+    img_folder: 'project_13',
+  },
   {
     name: '6/49 Lottery Game',
     shortDescription:
@@ -238,17 +228,19 @@ const projects = [
     page_link: 'https://wgalik.github.io/lotto_game/',
     repo: ' github.com/wgalik/lotto_game',
     repo_link: 'https://github.com/wgalik/lotto_game',
+    img_folder: 'project_8',
   },
   {
-    name: 'Guitar Tuner',
-    shortDescription: 'Simple guitar tuner built with HTML, CSS, and Vanilla JavaScript',
+    name: 'Contact Form',
+    shortDescription: 'The project focuses on building an accessible, responsive form.',
     description:
-      'A simple guitar tuner built with HTML, CSS, and Vanilla JavaScript, using Tone.js for sound synthesis. This project was created as a portfolio piece to practice frontend development skills.',
-    techs: '  HTML5 | CSS3 | JavaScript (ES6+) | Tone.js',
-    page: ' wgalik.github.io/guitar-tuner/',
-    page_link: 'https://wgalik.github.io/guitar-tuner/',
-    repo: ' github.com/wgalik/guitar-tuner',
-    repo_link: 'https://github.com/wgalik/guitar-tuner',
+      'This is my solution for the Contact Form challenge from Frontend Mentor. The project focuses on building an accessible, responsive form using HTML, Tailwind CSS, and TypeScript, with custom validation and ARIA support.',
+    techs: '  HTML5 | Tailwind CSS | TypeScript',
+    page: ' wgalik.github.io/contact-form-main-TailwindCSS-TypeScript/',
+    page_link: 'https://wgalik.github.io/contact-form-main-TailwindCSS-TypeScript/',
+    repo: ' github.com/wgalik/contact-form-main-TailwindCSS-TypeScript',
+    repo_link: 'https://github.com/wgalik/contact-form-main-TailwindCSS-TypeScript',
+    img_folder: 'project_14',
   },
   {
     name: 'Interactive Image Grid Portfolio',
@@ -261,20 +253,53 @@ const projects = [
     page_link: 'https://wgalik.github.io/Interactive-Image-Grid-Portfolio/',
     repo: ' github.com/wgalik/Interactive-Image-Grid-Portfolio',
     repo_link: 'https://github.com/wgalik/Interactive-Image-Grid-Portfolio',
+    img_folder: 'project_4',
   },
   {
-    name: 'Flexbox Menu with VanillaJS',
+    name: 'Landing Page',
     shortDescription:
-      'Simple, responsive navigation bar built with HTML, CSS (Flexbox), and Vanilla JavaScript.',
+      'A responsive and modern portfolio website for photographers, built with HTML5, SCSS, jQuery, and responsive design techniques.',
     description:
-      'This is a simple, responsive navigation bar built with HTML, CSS (Flexbox), and Vanilla JavaScript. The project demonstrates how to create a dynamic dropdown menu and a toggleable search input, all without external frameworks.',
-    techs: '  HTML5 | CSS3 | Flexbox | JavaScript',
-    page: ' wgalik.github.io/Flex-Box-Menu---Vanilla-JS/',
-    page_link: 'https://wgalik.github.io/Flex-Box-Menu---Vanilla-JS/',
-    repo: ' github.com/wgalik/Flex-Box-Menu---Vanilla-JS',
-    repo_link: 'https://github.com/wgalik/Flex-Box-Menu---Vanilla-JS',
+      'A responsive and modern portfolio website for photographers, built with HTML5, SCSS (Sass), JavaScript (jQuery), and responsive design techniques. This project is designed for photographers who want to showcase their work in an elegant, user-friendly format.',
+    techs: '  HTML5 | SCSS | Flexbox | CSS Grid | jQuery',
+    page: ' wgalik.github.io/landing-page/',
+    page_link: 'https://wgalik.github.io/landing-page/',
+    repo: ' github.com/wgalik/landing-page',
+    repo_link: 'https://github.com/wgalik/landing-page',
+    img_folder: 'project_9',
+  },
+  {
+    name: 'Rent an Art...',
+    shortDescription:
+      'Rent an Art is a conceptual web application developed for my graduation project.',
+    description:
+      'Rent an Art is a fictional web application developed as a university diploma project. The main goal was to design an intuitive and visually appealing frontend for an art rental platform, built entirely with frontend technologies (HTML, CSS, JS) without the use of backend frameworks. The application leverages Local Storage to store user data such as the shopping cart and preferences, allowing the state to be preserved between sessions. This project is part of my frontend portfolio.',
+    techs: ' HTML5 | CSS3 | JavaScript | jQuery | Bootstrap | REST API',
+    page: ' wgalik.github.io/project_WG/',
+    page_link: 'https://wgalik.github.io/project_WG/',
+    repo: ' github.com/wgalik/project_WG',
+    repo_link: 'https://github.com/wgalik/project_WG',
+    img_folder: 'project_1',
   },
 ]
+const projectGlobs: Record<number, Record<string, unknown>> = {
+  0: import.meta.glob('../assets/project_2/*.jpg', { eager: true, import: 'default' }),
+  1: import.meta.glob('../assets/project_7/*.jpg', { eager: true, import: 'default' }),
+  2: import.meta.glob('../assets/project_6/*.jpg', { eager: true, import: 'default' }),
+  3: import.meta.glob('../assets/project_10/*.jpg', { eager: true, import: 'default' }),
+  4: import.meta.glob('../assets/project_11/*.jpg', { eager: true, import: 'default' }),
+  5: import.meta.glob('../assets/project_3/*.jpg', { eager: true, import: 'default' }),
+  6: import.meta.glob('../assets/project_13/*.jpg', { eager: true, import: 'default' }),
+  7: import.meta.glob('../assets/project_8/*.jpg', { eager: true, import: 'default' }),
+  8: import.meta.glob('../assets/project_14/*.jpg', { eager: true, import: 'default' }),
+  9: import.meta.glob('../assets/project_4/*.jpg', { eager: true, import: 'default' }),
+  10: import.meta.glob('../assets/project_9/*.jpg', { eager: true, import: 'default' }),
+  11: import.meta.glob(`../assets/project_1/*.jpg`, { eager: true, import: `default` }),
+}
+
+for (const key of Object.keys(projectGlobs)) {
+  projectsImgs.push(Object.values(projectGlobs[Number(key)]))
+}
 </script>
 
 <style></style>

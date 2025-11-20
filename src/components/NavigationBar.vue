@@ -64,21 +64,21 @@ const pagesPL = [
   { name: 'Kontakt', href: '/contact', id: 'Contact' },
 ]
 
-const handleClick = (event: MouseEvent) => {
+const handleClick = () => {
   const navbarToggler = document.querySelector('button.navbar-toggler')
   const show = document.querySelector('.show')
-  const target = event.target as HTMLElement | null
+  // const target = event.target as HTMLElement | null
   if (show && navbarToggler) {
     show.classList.remove('show')
     navbarToggler.setAttribute('aria-expanded', 'false')
     navbarToggler.classList.add('collapsed')
   }
 
-  if (target && target.id === 'Projects') {
-    visible.value = false
-  } else {
-    visible.value = true
-  }
+  // if (target && target.id === 'Projects') {
+  //   visible.value = false
+  // } else {
+  //   visible.value = true
+  // }
 }
 </script>
 

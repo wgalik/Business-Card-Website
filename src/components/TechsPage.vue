@@ -4,7 +4,7 @@
       {{ isEN ? 'Technologies I work with:' : 'Technologie, z którymi pracuję:' }}
     </h1>
     <div class="row" v-for="tech in techs" :key="tech.name">
-      <div class="col-sm-3 font-monospace mb-sm-4 fs-5">
+      <div class="col font-monospace mb-sm-4 fs-5">
         <span v-html="tech.logo"></span> {{ tech.name }}
       </div>
 
@@ -20,18 +20,23 @@
 </template>
 
 <script setup lang="ts">
+import jQueryLogo from '../assets/jquery-svgrepo-com.svg'
+import tailwindCSSLogo from '../assets/Tailwind_CSS_Logo.svg'
+import typeScriptLogo from '../assets/typescript_logo.svg'
+
 const { isEN } = defineProps(['isEN'])
 
 const techs = [
   { name: 'HTML5', logo: '<i class="fa-brands fa-html5"></i>' },
   { name: 'CSS3', logo: '<i class="fa-brands fa-css3-alt"></i>' },
   { name: 'Bootstrap 5', logo: '<i class="fa-brands fa-bootstrap"></i>' },
+  { name: 'Tailwind CSS', logo: `<img src="${tailwindCSSLogo}" alt="logo"/>` },
   { name: 'SCSS (Sass)', logo: '<i class="fa-brands fa-sass"></i>' },
   { name: 'JavaScript (ES6+)', logo: '<i class="fab fa-js-square"></i>' },
-  // { name: 'jQuery', logo: '60%' },
+  { name: 'TypeScript', logo: `<img src="${typeScriptLogo}" alt="logo"/>` },
+  { name: 'jQuery', logo: `<img src="${jQueryLogo}" alt="logo"/>` },
   { name: 'React', logo: '<i class="fa-brands fa-react"></i>' },
   { name: 'Vue.js 3', logo: '<i class="fa-brands fa-vuejs"></i>' },
-  // { name: 'TypeScript', logo: '40%' },
   { name: 'PHP', logo: '<i class="fa-brands fa-php"></i>' },
   // { name: 'Laravel', logo: '<i class="fa-brands fa-laravel"></i>' },
   // { name: 'WordPress', logo: '20%' },
@@ -39,4 +44,21 @@ const techs = [
 ]
 </script>
 
-<style></style>
+<style scoped>
+.logo {
+  width: 20px;
+  height: 20px;
+}
+
+.logo::before {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: '';
+  background: url('../assets/typescript_logo.svg');
+}
+
+/* #typeScript {
+  background-image: url('../assets/typescript_logo.svg');
+} */
+</style>
