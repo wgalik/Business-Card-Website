@@ -5,16 +5,8 @@
     </h1>
     <div class="row" v-for="tech in techs" :key="tech.name">
       <div class="col font-monospace mb-sm-4 fs-5">
-        <span v-html="tech.logo"></span> {{ tech.name }}
+        <span v-html="tech.logo" class="pe-3"></span> {{ tech.name }}
       </div>
-
-      <!-- <div class="progress p-0 col-sm-9 mb-4 mb-sm-4">
-        <div
-          class="progress-bar progress-bar-striped progress-bar-animated bg-info"
-          :style="{ width: tech.width }"
-        >
-      </div>
-      </div> -->
     </div>
   </div>
 </template>
@@ -38,8 +30,6 @@ const techs = [
   { name: 'React', logo: '<i class="fa-brands fa-react"></i>' },
   { name: 'Vue.js 3', logo: '<i class="fa-brands fa-vuejs"></i>' },
   { name: 'PHP', logo: '<i class="fa-brands fa-php"></i>' },
-  // { name: 'Laravel', logo: '<i class="fa-brands fa-laravel"></i>' },
-  // { name: 'WordPress', logo: '20%' },
   { name: 'Git / GitHub', logo: '<i class="fa-brands fa-square-github"></i>' },
 ]
 </script>
