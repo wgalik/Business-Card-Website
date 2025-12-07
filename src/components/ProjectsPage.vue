@@ -205,6 +205,19 @@ const projects = [
     img_folder: 'project_3',
   },
   {
+    name: 'E-commerce Product Page',
+    shortDescription:
+      'This project recreates a fully responsive product page for a fictional sneaker company.',
+    description:
+      'A solution for the Frontend Mentor – E-commerce product page challenge. This project recreates a fully responsive product page for a fictional sneaker company. It includes an image gallery with a lightbox, a shopping cart with full interactivity, a mobile navigation menu, and quantity controls—all built with accessibility and clean UI/UX in mind using HTML, TypeScript, and a custom Tailwind CSS configuration with components defined in @layer components.',
+    techs: '  HTML5 | Tailwind CSS | TypeScript  | Vite',
+    page: ' wgalik.github.io/ecommerce-product-page-main_TailwindCSS_TypeScript/',
+    page_link: 'https://wgalik.github.io/ecommerce-product-page-main_TailwindCSS_TypeScript/',
+    repo: ' github.com/wgalik/ecommerce-product-page-main_TailwindCSS_TypeScript',
+    repo_link: 'https://github.com/wgalik/ecommerce-product-page-main_TailwindCSS_TypeScript',
+    img_folder: 'project_15',
+  },
+  {
     name: 'Tip Calculator App',
     shortDescription:
       'A responsive Tip Calculator built with HTML, SCSS (with PostCSS), and TypeScript.',
@@ -243,19 +256,6 @@ const projects = [
     img_folder: 'project_14',
   },
   {
-    name: 'Interactive Image Grid Portfolio',
-    shortDescription:
-      'A modern and responsive image gallery using HTML, CSS Grid, and Vanilla JavaScript.',
-    description:
-      'A modern and responsive image gallery using HTML, CSS Grid, and vanilla JavaScript. Designed as a minimalist portfolio-style grid, it features grayscale hover effects and full-screen image previews on click.',
-    techs: '  HTML5 | CSS3 | CSS Grid | JavaScript',
-    page: ' wgalik.github.io/Interactive-Image-Grid-Portfolio/',
-    page_link: 'https://wgalik.github.io/Interactive-Image-Grid-Portfolio/',
-    repo: ' github.com/wgalik/Interactive-Image-Grid-Portfolio',
-    repo_link: 'https://github.com/wgalik/Interactive-Image-Grid-Portfolio',
-    img_folder: 'project_4',
-  },
-  {
     name: 'Landing Page',
     shortDescription:
       'A responsive and modern portfolio website for photographers, built with HTML5, SCSS, jQuery, and responsive design techniques.',
@@ -289,10 +289,10 @@ const projectGlobs: Record<number, Record<string, unknown>> = {
   3: import.meta.glob('../assets/project_10/*.jpg', { eager: true, import: 'default' }),
   4: import.meta.glob('../assets/project_11/*.jpg', { eager: true, import: 'default' }),
   5: import.meta.glob('../assets/project_3/*.jpg', { eager: true, import: 'default' }),
-  6: import.meta.glob('../assets/project_13/*.jpg', { eager: true, import: 'default' }),
-  7: import.meta.glob('../assets/project_8/*.jpg', { eager: true, import: 'default' }),
-  8: import.meta.glob('../assets/project_14/*.jpg', { eager: true, import: 'default' }),
-  9: import.meta.glob('../assets/project_4/*.jpg', { eager: true, import: 'default' }),
+  6: import.meta.glob('../assets/project_15/*.jpg', { eager: true, import: 'default' }),
+  7: import.meta.glob('../assets/project_13/*.jpg', { eager: true, import: 'default' }),
+  8: import.meta.glob('../assets/project_8/*.jpg', { eager: true, import: 'default' }),
+  9: import.meta.glob('../assets/project_14/*.jpg', { eager: true, import: 'default' }),
   10: import.meta.glob('../assets/project_9/*.jpg', { eager: true, import: 'default' }),
   11: import.meta.glob(`../assets/project_1/*.jpg`, { eager: true, import: `default` }),
 }
