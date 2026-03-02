@@ -65,20 +65,12 @@ const pagesPL = [
 ]
 
 const handleClick = () => {
-  const navbarToggler = document.querySelector('button.navbar-toggler')
-  const show = document.querySelector('.show')
-  // const target = event.target as HTMLElement | null
-  if (show && navbarToggler) {
-    show.classList.remove('show')
-    navbarToggler.setAttribute('aria-expanded', 'false')
-    navbarToggler.classList.add('collapsed')
-  }
-
-  // if (target && target.id === 'Projects') {
-  //   visible.value = false
-  // } else {
-  //   visible.value = true
-  // }
+  const navbarToggler = document.querySelector<HTMLButtonElement>('button.navbar-toggler')
+  const show = document.querySelector<HTMLElement>('.show')
+  if (!show || !navbarToggler) return
+  show.classList.remove('show')
+  navbarToggler.setAttribute('aria-expanded', 'false')
+  navbarToggler.classList.add('collapsed')
 }
 </script>
 

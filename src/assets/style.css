@@ -49,13 +49,6 @@ nav,
   margin-top: 25%;
 }
 
-.nav-link {
-  color: #fbfbfb;
-}
-.nav-link:hover {
-  color: var(--info);
-}
-
 .nav-link.router-link-active {
   color: var(--info) !important;
   text-shadow: var(--shadow);

@@ -19,11 +19,7 @@ import { ref, onMounted, defineAsyncComponent } from 'vue'
 const isEN = ref(true)
 const intro = ref(true)
 
-let timeDeley = 4000
-
-if (window.location.pathname !== '/Business-Card-Website/') {
-  timeDeley = 0
-}
+const timeDeley = window.location.pathname === '/Business-Card-Website/' ? 4000 : 0
 
 const NavigationBar = defineAsyncComponent<Component>(
   () =>
@@ -36,11 +32,9 @@ const NavigationBar = defineAsyncComponent<Component>(
 
 const toggleLang = () => {
   isEN.value = !isEN.value
-  if (isEN.value) {
-    document.documentElement.lang = 'en'
-  } else {
-    document.documentElement.lang = 'pl'
-  }
+  return isEN.value
+    ? (document.documentElement.lang = 'en')
+    : (document.documentElement.lang = 'pl')
 }
 
 const stars = () => {
