@@ -15,7 +15,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHistory('/Business-Card-Website/'),
+  history: createWebHistory(),
   routes,
 })
 

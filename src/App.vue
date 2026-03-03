@@ -20,7 +20,7 @@ const isEN = ref(true)
 const intro = ref(true)
 const showNav = ref(false)
 
-const timeDelay = window.location.pathname === '/Business-Card-Website/' ? 4000 : 0
+const timeDelay = window.location.pathname === '/' ? 4000 : 0
 
 let timeoutId: ReturnType<typeof setTimeout>
 

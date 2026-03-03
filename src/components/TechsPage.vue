@@ -3,9 +3,14 @@
     <h1 class="mb-5">
       {{ isEN ? 'Technologies I work with:' : 'Technologie, z którymi pracuję:' }}
     </h1>
-    <div class="row" v-for="tech in techs" :key="tech.name">
-      <div class="col font-monospace mb-sm-4 fs-5">
-        <span v-html="tech.logo" class="pe-3"></span> {{ tech.name }}
+    <div class="row">
+    <div
+      class="col-3 font-monospace m-2 mb-sm-4 fs-5 text-center border rounded "
+      v-for="tech in techs"
+      :key="tech.name"
+    >
+      <p v-html="tech.logo" class="fs-1"></p>
+      {{ tech.name }}
       </div>
     </div>
   </div>

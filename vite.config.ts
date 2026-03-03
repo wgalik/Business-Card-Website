@@ -18,7 +18,7 @@ export default defineConfig({
       ],
     }),
   ],
-  base: '/Business-Card-Website/',
+  base: '',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
