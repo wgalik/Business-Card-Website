@@ -12,6 +12,7 @@ const routes: Array<RouteRecordRaw> = [
   { path: '/techs', name: 'Techs', component: Techs },
   { path: '/projects', name: 'Projects', component: Projects },
   { path: '/contact', name: 'Contact', component: Contact },
+  { path: '/:pathMatch(.*)*', name: 'Home', component: Home },
 ]
 
 const router = createRouter({
