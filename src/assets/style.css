@@ -26,11 +26,9 @@ nav,
 #welcome {
   color: var(--info);
   animation: pulsatingShadow 3s linear infinite;
-
 }
 #welcome.paused {
   animation: none !important;
-
 }
 
 #code {
@@ -40,6 +38,9 @@ nav,
 }
 #code::after {
   content: '</>';
+}
+#code.paused {
+  animation: none !important;
 }
 #logo::after {
   color: var(--info);

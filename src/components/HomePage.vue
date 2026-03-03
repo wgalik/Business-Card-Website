@@ -3,6 +3,7 @@
     v-if="intro"
     id="code"
     class="font-monospace fw-bold d-flex justify-content-center align-items-center"
+    :class="{ paused: isPaused }"
   ></div>
   <div
     v-else

@@ -34,6 +34,7 @@ const techs = [
   { name: 'jQuery', logo: `<img src="${jQueryLogo}" alt="logo"/>` },
   { name: 'React', logo: '<i class="fa-brands fa-react"></i>' },
   { name: 'Vue.js 3', logo: '<i class="fa-brands fa-vuejs"></i>' },
+  { name: 'WordPress', logo: '<i class="fa-brands fa-wordpress"></i>' },
   { name: 'PHP', logo: '<i class="fa-brands fa-php"></i>' },
   { name: 'Git / GitHub', logo: '<i class="fa-brands fa-square-github"></i>' },
 ]
@@ -56,4 +57,12 @@ const techs = [
 /* #typeScript {
   background-image: url('../assets/typescript_logo.svg');
 } */
+
+/* `<img src="${tailwindCSSLogo}" alt="logo"/>` */
+
+/* Tailwind
+<i class="fa-brands fa-tailwind-css"></i>
+TS
+<i class="fa-brands fa-typescript"></i> */
+
 </style>
