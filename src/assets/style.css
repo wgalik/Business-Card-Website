@@ -26,6 +26,11 @@ nav,
 #welcome {
   color: var(--info);
   animation: pulsatingShadow 3s linear infinite;
+
+}
+#welcome.paused {
+  animation: none !important;
+
 }
 
 #code {

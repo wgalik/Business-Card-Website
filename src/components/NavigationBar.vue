@@ -1,7 +1,11 @@
 <template>
   <nav class="navbar navbar-expand-sm navbar-dark shadow position-fixed z-3 w-100 top-0 start-0">
     <div class="container-fluid align-items-center">
-      <RouterLink to="/" id="Home" class="link-underline link-underline-opacity-0"
+      <RouterLink
+        to="/"
+        id="Home"
+        class="link-underline link-underline-opacity-0"
+        @click="emit('click', $event.target.id)"
         ><p class="font-monospace mt-2 ms-2 fw-bold fs-3" id="logo"></p
       ></RouterLink>
 
@@ -73,7 +77,6 @@ const handleClick = () => {
   if (!show || !navbarToggler) return
   show.classList.remove('show')
   navbarToggler.setAttribute('aria-expanded', 'false')
-  navbarToggler.classList.add('collapsed')
 }
 </script>
 

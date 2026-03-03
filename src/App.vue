@@ -1,12 +1,12 @@
 <template>
   <header>
-    <NavigationBar @click="toggleLang" :isEN />
+    <NavigationBar v-if="showNav" :isEN @click="handleButton" />
   </header>
 
   <main>
     <RouterView v-slot="{ Component }">
       <Transition name="fade" appear mode="out-in">
-        <component :is="Component" :intro :isEN />
+        <component :is="Component" :intro :isEN @click="handleButton" />
       </Transition>
     </RouterView>
   </main>
@@ -18,18 +18,24 @@ import { ref, onMounted, defineAsyncComponent } from 'vue'
 
 const isEN = ref(true)
 const intro = ref(true)
+const showNav = ref(false)
 
-const timeDeley = window.location.pathname === '/Business-Card-Website/' ? 4000 : 0
+const timeDelay = window.location.pathname === '/Business-Card-Website/' ? 4000 : 0
 
-const NavigationBar = defineAsyncComponent<Component>(
-  () =>
-    new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(import('./components/NavigationBar.vue'))
-      }, timeDeley)
-    }),
-)
+let timeoutId: ReturnType<typeof setTimeout>
 
+const NavigationBar = defineAsyncComponent<Component>({
+  loader: () => import('./components/NavigationBar.vue'),
+})
+
+const handleButton = (id?: string) => {
+  if (!id) return toggleLang()
+  if (timeoutId) clearTimeout(timeoutId)
+  intro.value = true
+  timeoutId = setTimeout(() => {
+    intro.value = false
+  }, 4000)
+}
 const toggleLang = () => {
   isEN.value = !isEN.value
   return isEN.value
@@ -39,6 +45,7 @@ const toggleLang = () => {
 
 const stars = () => {
   setTimeout(() => {
+    showNav.value = true
     for (let i = 0; i < 100; i++) {
       const star = document.createElement('div')
       star.classList.add('star')
@@ -56,7 +63,7 @@ const stars = () => {
       document.body.appendChild(star)
     }
     intro.value = !intro.value
-  }, timeDeley)
+  }, timeDelay)
 }
 
 onMounted(() => {
