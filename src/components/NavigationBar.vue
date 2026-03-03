@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar navbar-expand-sm navbar-dark shadow position-fixed z-3 w-100 top-0 start-0">
     <div class="container-fluid align-items-center">
-      <p class="font-monospace mt-2 ms-2 fw-bold fs-3" id="logo"></p>
+      <RouterLink to="/" id="Home" class="link-underline link-underline-opacity-0"
+        ><p class="font-monospace mt-2 ms-2 fw-bold fs-3" id="logo"></p
+      ></RouterLink>
 
       <button
         class="navbar-toggler navbar-dark ms-auto"
@@ -46,6 +48,7 @@ import flagPL from '../assets/National_Flag_of_Poland.png'
 import flagUK from '../assets/united-kingdom-flag-icon.png'
 
 import { ref } from 'vue'
+
 const visible = ref(true)
 
 const { isEN } = defineProps(['isEN'])

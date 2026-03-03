@@ -25,8 +25,9 @@ nav,
 
 #welcome {
   color: var(--info);
-  animation: pulsatingShadow 3s infinite linear;
+  animation: pulsatingShadow 3s linear infinite;
 }
+
 #code {
   color: transparent;
   font-size: 10rem;
