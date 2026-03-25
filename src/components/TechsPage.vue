@@ -1,16 +1,17 @@
 <template>
   <div class="container text-light" id="techs">
-    <h1 class="mb-5">
+    <h1 class="mb-5 text-center">
       {{ isEN ? 'Technologies I work with:' : 'Technologie, z którymi pracuję:' }}
     </h1>
-    <div class="row">
-    <div
-      class="col-3 font-monospace m-2 mb-sm-4 fs-5 text-center border rounded "
-      v-for="tech in techs"
-      :key="tech.name"
-    >
-      <p v-html="tech.logo" class="fs-1"></p>
-      {{ tech.name }}
+    <div class="row d-flex justify-content-center">
+      <div
+        class="col-11 col-sm-3 col-lg-2 font-monospace m-2 mb-sm-4 fs-6 text-center rounded border bg-light bg-gradient"
+        style="--bs-bg-opacity: 0.2"
+        v-for="tech in techs"
+        :key="tech.name"
+      >
+        <p v-html="tech.logo" class="fs-1 mt-2"></p>
+        <p class="mb-2">{{ tech.name }}</p>
       </div>
     </div>
   </div>
@@ -54,6 +55,11 @@ const techs = [
   background: url('../assets/typescript_logo.svg');
 }
 
+img {
+  max-width: 40px;
+  max-height: 40px;
+}
+
 /* #typeScript {
   background-image: url('../assets/typescript_logo.svg');
 } */
@@ -64,5 +70,4 @@ const techs = [
 <i class="fa-brands fa-tailwind-css"></i>
 TS
 <i class="fa-brands fa-typescript"></i> */
-
 </style>

@@ -1,13 +1,13 @@
 <template>
   <div class="container text-light" id="projects">
-    <p class="mb-5 lead lh-lg">
+    <p class="mb-5 lead lh-lg text-center">
       {{
         isEN
           ? 'This site displays 12 selected projects, and the full set of 20+ additional repositories is available on my '
           : 'Ta strona prezentuje 12 wybranych projektów, a pełny zestaw ponad 20 dodatkowych repozytoriów jest dostępny na moim '
       }}
       <a
-        class="link-light link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+        class="link-light link-underline-white link-underline-opacity-50-hover"
         href="https://github.com/wgalik"
         target="_blank"
         rel="noopener noreferrer"
