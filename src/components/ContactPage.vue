@@ -3,7 +3,7 @@
     class="container-xl d-flex justify-content-center align-items-center text-light"
     id="contact"
   >
-    <div class="card bg-transparent text-light border-0 w-50">
+    <div class="card bg-transparent text-light border-0 ">
       <div class="card-body text-center">
         <h1 class="card-title mb-3">{{ isEN ? 'Contact me:' : 'Skontaktuj się ze mną:' }}</h1>
         <a
