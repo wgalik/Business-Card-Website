@@ -133,6 +133,19 @@ const projectsImgs: unknown[] = []
 
 const projects = [
   {
+    name: 'galik.biz – Portfolio Website',
+    shortDescription:
+      'This repository contains code for galik.biz – a personal portfolio website for a Frontend Developer & DTP Freelancer.',
+    description:
+      'A modern, responsive portfolio website built to showcase my work as a Frontend Developer and DTP Freelancer. The project features a clean landing page, interactive portfolio gallery, smooth navigation, and a fully functional contact form integrated with a custom PHP backend. The frontend was developed using a mobile-first approach, semantic HTML5 structure, and a modular SCSS architecture based on @use, variables, and mixins. UI functionality was written in TypeScript, including dynamic portfolio filtering, popup image previews with external demo links, mobile hamburger navigation, and animated interface elements such as a skills carousel with hover-based speed control. The contact form includes full validation with accessible feedback messages and is protected with multiple anti-spam mechanisms. On the backend side, a PHP endpoint handles form requests with honeypot fields, minimum submission time validation, and IP-based rate limiting stored in a JSON file. Submitted messages are saved locally and also sent via email both to the site owner and as a confirmation message to the user. CORS support was implemented to ensure secure frontend-backend communication. The project also includes accessibility improvements (ARIA attributes, keyboard navigation, aria-live validation feedback) and SEO optimization through meta tags, Open Graph data, canonical URL setup, favicon/webmanifest configuration, and JSON-LD structured data.',
+    techs: ' HTML5 | SCSS | TypeScript | PHP | Vite | REST API',
+    page: ' galik.biz',
+    page_link: 'https://galik.biz/',
+    repo: ' github.com/wgalik/galik.biz',
+    repo_link: 'https://github.com/wgalik/galik.biz',
+    img_folder: 'project_16',
+  },
+  {
     name: 'Business Card Website',
     shortDescription: 'This is my personal front-end developer portfolio.',
     description:
@@ -192,18 +205,18 @@ const projects = [
     repo_link: 'https://github.com/wgalik/expence-tracker',
     img_folder: 'project_11',
   },
-  {
-    name: 'Inspiring Quote App',
-    shortDescription: 'A simple and elegant web application built with Vue 3 and Vite.',
-    description:
-      'A simple and elegant web application built with Vue 3 and Vite. This project connects to a REST API to fetch and display random inspirational quotes in a clean and minimalistic interface. With a single click, users can instantly generate a new quote, making the app both engaging and refreshing. The application is styled with SCSS and Bootstrap, ensuring a modern and responsive design that looks great on any device. It demonstrates practical use of Vue 3 Options API, API integration, and state reactivity, all bundled in a lightweight, performant setup powered by Vite. This project highlights my ability to build API-driven applications, focus on user experience, and deliver a polished front-end with clear code structure and maintainable styling.',
-    techs: ' HTML5 | SCSS | Bootstrap | Vue.js | Vite | REST API',
-    page: ' wgalik.github.io/Inspiring-quote-app---Vue.js/',
-    page_link: 'https://wgalik.github.io/Inspiring-quote-app---Vue.js/',
-    repo: ' github.com/wgalik/Inspiring-quote-app---Vue.js',
-    repo_link: 'https://github.com/wgalik/Inspiring-quote-app---Vue.js',
-    img_folder: 'project_3',
-  },
+  // {
+  //   name: 'Inspiring Quote App',
+  //   shortDescription: 'A simple and elegant web application built with Vue 3 and Vite.',
+  //   description:
+  //     'A simple and elegant web application built with Vue 3 and Vite. This project connects to a REST API to fetch and display random inspirational quotes in a clean and minimalistic interface. With a single click, users can instantly generate a new quote, making the app both engaging and refreshing. The application is styled with SCSS and Bootstrap, ensuring a modern and responsive design that looks great on any device. It demonstrates practical use of Vue 3 Options API, API integration, and state reactivity, all bundled in a lightweight, performant setup powered by Vite. This project highlights my ability to build API-driven applications, focus on user experience, and deliver a polished front-end with clear code structure and maintainable styling.',
+  //   techs: ' HTML5 | SCSS | Bootstrap | Vue.js | Vite | REST API',
+  //   page: ' wgalik.github.io/Inspiring-quote-app---Vue.js/',
+  //   page_link: 'https://wgalik.github.io/Inspiring-quote-app---Vue.js/',
+  //   repo: ' github.com/wgalik/Inspiring-quote-app---Vue.js',
+  //   repo_link: 'https://github.com/wgalik/Inspiring-quote-app---Vue.js',
+  //   img_folder: 'project_3',
+  // },
   {
     name: 'E-commerce Product Page',
     shortDescription:
@@ -283,12 +296,12 @@ const projects = [
   },
 ]
 const projectGlobs: Record<number, Record<string, unknown>> = {
-  0: import.meta.glob('../assets/project_2/*.jpg', { eager: true, import: 'default' }),
-  1: import.meta.glob('../assets/project_7/*.jpg', { eager: true, import: 'default' }),
-  2: import.meta.glob('../assets/project_6/*.jpg', { eager: true, import: 'default' }),
-  3: import.meta.glob('../assets/project_10/*.jpg', { eager: true, import: 'default' }),
-  4: import.meta.glob('../assets/project_11/*.jpg', { eager: true, import: 'default' }),
-  5: import.meta.glob('../assets/project_3/*.jpg', { eager: true, import: 'default' }),
+  0: import.meta.glob('../assets/project_16/*.jpg', { eager: true, import: 'default' }),
+  1: import.meta.glob('../assets/project_2/*.jpg', { eager: true, import: 'default' }),
+  2: import.meta.glob('../assets/project_7/*.jpg', { eager: true, import: 'default' }),
+  3: import.meta.glob('../assets/project_6/*.jpg', { eager: true, import: 'default' }),
+  4: import.meta.glob('../assets/project_10/*.jpg', { eager: true, import: 'default' }),
+  5: import.meta.glob('../assets/project_11/*.jpg', { eager: true, import: 'default' }),
   6: import.meta.glob('../assets/project_15/*.jpg', { eager: true, import: 'default' }),
   7: import.meta.glob('../assets/project_13/*.jpg', { eager: true, import: 'default' }),
   8: import.meta.glob('../assets/project_8/*.jpg', { eager: true, import: 'default' }),
